@@ -7,21 +7,27 @@ let token = localStorage.token
 if (!token)
   token = localStorage.token = Math.random().toString(36).substr(-8)
 
+// The request headers
 const headers = {
   'Accept': 'application/json',
   'Authorization': token
 }
 
+// The get() method will fetch a single book from the book API,
+// after turning the fetch result into JSON and grabbing the book 
+// object
 export const get = (bookId) =>
   fetch(`${api}/books/${bookId}`, { headers })
     .then(res => res.json())
     .then(data => data.book)
 
+// The getAll() method will fetch all of the books in the book API
 export const getAll = () =>
   fetch(`${api}/books`, { headers })
     .then(res => res.json())
     .then(data => data.books)
 
+// The update() method will move add a single book to a shelf
 export const update = (book, shelf) =>
   fetch(`${api}/books/${book.id}`, {
     method: 'PUT',
@@ -32,6 +38,7 @@ export const update = (book, shelf) =>
     body: JSON.stringify({ shelf })
   }).then(res => res.json())
 
+// The search() method will fetch matching books from the API
 export const search = (query) =>
   fetch(`${api}/search`, {
     method: 'POST',
