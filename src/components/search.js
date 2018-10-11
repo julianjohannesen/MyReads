@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 export default class Search extends Component {
   render() {
     return (
-      // Should this be a separate component?
+      // 
       <div className="search-books">
 
         <div className="search-books-bar">
-        
+
           <Link
             to="/"
             className="close-search"
