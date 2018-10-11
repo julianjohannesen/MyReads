@@ -12,7 +12,6 @@ export default class Search extends Component {
           <Link
             to="/"
             className="close-search"
-            onClick={() => this.setState({ showSearchPage: false })}
           >
             Close
           </Link>
