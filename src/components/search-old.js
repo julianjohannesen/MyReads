@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Books from "./books";
-import { search } from "../BooksAPI";
+import BookAPI, { search } from "../BookAPI";
 
 export default class Search extends Component {
   state = { query: "" };
@@ -11,11 +11,18 @@ export default class Search extends Component {
   };
 
   render() {
-	let query = this.state.query;
-    let showingBooks = query
-      	? search(query)
-      	: "No matches.";
-	console.log("The current value of showingBooks is: ", showingBooks);
+    const someBooks = [{title:"To Kill a Mocking Bird"}, {title:"Some Other Book about Fitness"}, {title: "A Third Book about Parenting"}];
+
+    let query = this.state.query;
+    let showingBooks;
+    if (query) {
+      //For some reason, I was having a problem with escapeRegExp(this.state.query), "i"
+      const match = new RegExp(query.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&"), "i");
+      showingBooks = someBooks.filter(aBook => match.test(aBook.title));
+    } else {
+      showingBooks = someBooks;
+    }
+
     return (
       //
       <div className="search-books">
