@@ -48,9 +48,6 @@ export const search = (query) =>
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({ query })
-  }).then(res => {
-      console.log("The query is: ", query, "The raw response", res);
-      return res.json();
-  })
+  }).then(res => res.json())
     .then(data => data.books)
     .catch(new Error())

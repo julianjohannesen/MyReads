@@ -1,20 +1,17 @@
 import React, { Component } from "react";
 
 export default class Books extends Component {
-  render() {
-    console.log(this.props.showingBooks);
-    return (
-      <ol className="books-grid">
-        {
-		  	this.props.showingBooks && Array.isArray(this.props.showingBooks) 
-		  	?
-		 	this.props.showingBooks.map(
-				(aBook, index) => (
+  	render() {
+		const books = this.props.showingBooks;
+    	console.log("From books.js the value of this.props.showingBooks is: ", books);
+		return (
+		<ol className="books-grid">
+			{books.then( (result) => { 
+				result.map( (aBook, index) => (
 					<li key={index}>
-				
-					<div className="book">
+						<div className="book">
 					
-					<div className="book-top">
+						<div className="book-top">
 						<div className="book-cover" style={aBook.style} />
 						<div className="book-shelf-changer">
 							<select>
@@ -31,23 +28,21 @@ export default class Books extends Component {
 						</div>
 					</div>
 
-					<div className="book-title">
+						<div className="book-title">
 						{aBook.title || "No title"}
 					</div>
 
-					<div className="book-authors">
+						<div className="book-authors">
 						{aBook.author || "No author"}
 					</div>
 					
-				</div>
-				
+						</div>
 					</li>
-				)
-			)
-			: 
-			"No Matches"
-		}
-      </ol>
-    );
-  }
+				))
+			})
+			.catch(new Error())
+			}
+		</ol>
+		);
+  	}
 }

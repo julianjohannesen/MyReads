@@ -4,47 +4,42 @@ import Books from "./books";
 import { search } from "../BooksAPI";
 
 export default class Search extends Component {
-  state = { query: "" };
+  	state = { query: "" };
 
-  handleQuery = event => {
-    this.setState({ query: event.target.value });
-  };
+  	handleQuery = event => {
+    	this.setState({ query: event.target.value });
+  	};
 
-  render() {
-	let query = this.state.query;
-    let showingBooks = query
-      	? search(query)
-      	: "No matches.";
-	console.log("The current value of showingBooks is: ", showingBooks);
-    return (
-      //
-      <div className="search-books">
-        <div className="search-books-bar">
-          <Link to="/" className="close-search">
-            Close
-          </Link>
-
-          <form
-            className="search-books-input-wrapper"
-            onSubmit={event => event.preventDefault()}
-          >
-            <label htmlFor="book-search">
-              Book Search
-              <input
-                name="book-search"
-                type="text"
-                value={this.state.query}
-                onChange={this.handleQuery}
-                placeholder="Search by title or author"
-              />
-            </label>
-          </form>
-        </div>
-
-        <div className="search-books-results">
-          <Books showingBooks={showingBooks} />
-        </div>
-      </div>
-    );
-  }
+  	render() {
+    	let query = this.state.query;
+    	let showingBooks = query.length > 2 && search(query);
+    	console.log("The current value of showingBooks is: ", showingBooks);
+		return (
+			<div className="search-books">
+				<div className="search-books-bar">
+				<Link to="/" className="close-search">
+					Close
+				</Link>
+				<form
+					className="search-books-input-wrapper"
+					onSubmit={event => event.preventDefault()}
+				>
+					<label htmlFor="book-search">
+					Book Search
+					<input
+						name="book-search"
+						type="text"
+						value={this.state.query}
+						onChange={this.handleQuery}
+						placeholder="Search by title or author"
+					/>
+					</label>
+				</form>
+				</div>
+				<div className="search-books-results">
+					<Books showingBooks={showingBooks} />
+				</div>
+			</div>
+		);
+  	}
 }
