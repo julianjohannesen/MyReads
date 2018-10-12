@@ -13,6 +13,6 @@ In the template, the books are just hard coded into the JSX in App.js. I moved t
 
 The shelves and the books that appear on those shelves are all just hard coded. I need to figure out how to use the BooksAPI to fetch all of those books and display them correctly.
 
-To do that I think I'll need components both for Books and for Shelves. Definitely for Books.
+To do think that I think I'll need components both for Books and for Shelves. Definitely for Books.
 
 
