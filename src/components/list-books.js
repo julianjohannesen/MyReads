@@ -13,7 +13,7 @@ export default class ListBooks extends Component {
             </div>
           
             <div className="list-books-content">
-                <Bookshelf bookshelfTitle={"Current Reading"} />
+                <Bookshelf bookshelfTitle={"Currently Reading"} />
                 <Bookshelf bookshelfTitle={"Want to Read"} />
                 <Bookshelf bookshelfTitle={"Read"} />
             </div>

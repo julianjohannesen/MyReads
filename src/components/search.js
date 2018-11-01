@@ -11,9 +11,10 @@ export default class Search extends Component {
   	};
 
   	render() {
-    	let query = this.state.query;
-    	let showingBooks = query.length > 2 && search(query);
-    	console.log("The current value of showingBooks is: ", showingBooks);
+		let query = this.state.query;
+		// search() is a method of BooksAPI.js
+    	let showingBooks = search(query);
+    	console.log("From Search: The current value of showingBooks is: ", showingBooks);
 		return (
 			<div className="search-books">
 				<div className="search-books-bar">

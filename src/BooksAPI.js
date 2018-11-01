@@ -14,9 +14,13 @@ const headers = {
 // after turning the fetch result into JSON and grabbing the book 
 // object
 export const get = (bookId) =>
+// We supply fetch with (1) the api url with the id of a particular book and (2) some headers that specify that we will accept application/json and providing an auth token
   fetch(`${api}/books/${bookId}`, { headers })
+    // We use .json() to extract the json from the Response object returned by fetch
     .then(res => res.json())
+    // Then from the json we grab the book object (in this case we're getting a single book)
     .then(data => data.book)
+    // We return an error if anything goes wrong
     .catch(new Error())
 
 // The getAll() method will fetch all of the books in the book API
