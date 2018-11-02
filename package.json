@@ -1,20 +1,43 @@
 {
+  "name": "myreads",
+  "version": "0.1.0",
+  "description": "A GoodReads-inspired book database using React.",
+  "main": "index.js",
   "dependencies": {
     "escape-string-regexp": "^1.0.5",
     "form-serialize": "^0.7.2",
+    "sort-by": "^1.2.0"
+  },
+  "devDependencies": {
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-router-dom": "^4.3.1",
-    "sort-by": "^1.2.0"
-  },
-  "devDependencies": {
+    "gh-pages": "^2.0.1",
     "react-scripts": "1.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  }
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "homepage": "http://julianjohannesen.github.io/myreads",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/julianjohannesen/myreads"
+  },
+  "keywords": [
+    "book",
+    "React",
+    "GoodReads",
+    "database"
+  ],
+  "author": "Julian Johannesen <julian.johannesen@gmail.com> (http://julianjohannesen.com)",
+  "contributors": [
+    "none"
+  ],
+  "license": "MIT"
 }
