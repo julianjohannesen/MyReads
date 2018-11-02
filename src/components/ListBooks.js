@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Bookshelf from './bookshelf';
+import Bookshelf from './Bookshelf';
 
 export default class ListBooks extends Component {
   render() {

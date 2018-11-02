@@ -1,51 +1,31 @@
 import React, { Component } from "react";
 import { getAll } from "../BooksAPI.js";
+import Book from './Book.js';
 
 export default class Books extends Component {
 
-  	render() {
+	constructor() {
+		super();
+
+		this.books = getAll().then(result => {
+			console.log(Object.values(result));
+			return Object.values(result);
+		});
+	}
+
+	render() {
+
+		const booksArray = getAll().then(result => {
+			console.log(Object.values(result));
+			return Object.values(result);
+		});
+
 		return (
 			<ol className="books-grid">
-				{getAll().then(result => (
-					<li key={Math.random()}>
-						<div className="book">
-					
-							<div className="book-top">
-								<div className="book-cover" style={result.style} />
-								<div className="book-shelf-changer">
-									<select>
-										<option value="move" disabled>
-											Move to...
-										</option>
-										<option value="currentlyReading">
-											Currently Reading
-										</option>
-										<option value="wantToRead">
-											Want to Read
-										</option>
-										<option value="read">
-											Read
-										</option>
-										<option value="none">
-											None
-										</option>
-									</select>
-								</div>
-							</div>
-
-							<div className="book-title">
-								{result.title || "No title"}
-							</div>
-
-							<div className="book-authors">
-								{result.author || "No author"}
-							</div>
-							
-						</div>
-					</li>		
-				))}
-		
+				{[{title: "one", authors: ["1", "2"], id: Math.random()},{title: "two", authors: ["1", "2"], id: Math.random()},{title: "three",  authors: ["1", "2"], id: Math.random()}].map( (book, index) => (
+					<Book key={index} book={book} />	
+				))}	
 			</ol>
-		)
+		)	
 	}
 }

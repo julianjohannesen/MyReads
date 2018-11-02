@@ -9,8 +9,16 @@ App.js
 Search.js ----- ListBooks.js
 |               |
 Books.js        BookShelf.js
+|               |
+Book.js         Books.js
+|               |
+ShelfChanger    Book.js
                 |
-                Books.js
+                ShelfChanger
+
+At what point do you actually fetch the books?
+And how do you tell the fetch which shelf of books to fetch?
+Where is the shelf state set?
 
 ## Problem: 
 After clicking on Search, using the back button does not return me to the homepage.
