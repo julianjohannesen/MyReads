@@ -17,8 +17,15 @@ ShelfChanger    Book.js
                 ShelfChanger
 
 At what point do you actually fetch the books?
-And how do you tell the fetch which shelf of books to fetch?
+And how do you tell the fetch which shelf of books to fetch? Or do you filter the books after they all come in? You'd have to search for them, not filter them, otherwise, you could get a million books returned.
 Where is the shelf state set?
+
+## How will the books move from shelf to shelf
+
+This is going to involve setState(). Each shelf must have a set of book assignments. Maybe an array of books on that shelf. Where is this array assigned values? 
+- ListBooks tells each shelf what it is by passing a shelf title prop. 
+- Then BookShelf tells Books which books to display.
+- Then Book creates an entry for each of those books.
 
 ## Problem: 
 After clicking on Search, using the back button does not return me to the homepage.

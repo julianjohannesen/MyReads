@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import Books from "./books";
+import Books from "./Books";
 import { search } from "../BooksAPI";
 
 export default class Search extends Component {
