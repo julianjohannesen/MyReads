@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import ShelfChanger from './ShelfChanger';
-import Books from './Books';
 
 export default class Book extends Component {
 
@@ -8,13 +7,13 @@ export default class Book extends Component {
         const book = this.props.book;
         return (
 
-            <li key={Books.id}>
+            <li>
                 <div className="book">
 
                     <div className="book-top">
                     {/*this is where we get the book cover background image */}
                         <div className="book-cover" style={{background: book.style}} />
-                        <ShelfChanger />
+                        <ShelfChanger theBookID={book.id}  cb={this.props.cb} />
                     </div>
 
                     <div className="book-title">

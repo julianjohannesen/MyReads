@@ -2,25 +2,24 @@ let PRECACHE = "v1";
 let RUNTIME = "runtime";
 // URLs and files to cache
 const urlsToCache = [
-
-  "MyReads/",
-  "MyReads/search",
-  "MyReads/index.html",
-  "MyReads/public/favicon.ico",
-  "MyReads/src/icons/add.svg",
-  "MyReads/src/icons/arrow-back.svg",
-  "MyReads/src/icons/arrow-drop-down.svg",
-  "MyReads/src/index.js",
-  "MyReads/src/index.css",
-  "MyReads/src/App.js",
-  "MyReads/src/App.css",
-  "MyReads/src/BooksAPI.js",
-  "MyReads/src/components/ListBooks.js",
-  "MyReads/src/components/Search.js",
-  "MyReads/src/components/Bookshelf.js",
-  "MyReads/src/components/Books.js",
-  "MyReads/src/components/Book.js",
-  "MyReads/src/components/ShelfChanger.js",
+  "myreads/",
+  "myreads/search",
+  "myreads/index.html",
+  "myreads/public/favicon.ico",
+  "myreads/src/icons/add.svg",
+  "myreads/src/icons/arrow-back.svg",
+  "myreads/src/icons/arrow-drop-down.svg",
+  "myreads/src/index.js",
+  "myreads/src/index.css",
+  "myreads/src/App.js",
+  "myreads/src/App.css",
+  "myreads/src/BooksAPI.js",
+  "myreads/src/components/ListBooks.js",
+  "myreads/src/components/Search.js",
+  "myreads/src/components/Bookshelf.js",
+  "myreads/src/components/Books.js",
+  "myreads/src/components/Book.js",
+  "myreads/src/components/ShelfChanger.js",
 ];
 
 // Install Event

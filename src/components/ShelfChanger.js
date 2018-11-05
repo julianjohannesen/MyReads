@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
+import ListBooks from './ListBooks.js';
 
 export default class ShelfChanger extends Component {
+
     render() {
+
         return (
 
             <div className="book-shelf-changer">
-                <select>
+                <select onChange={this.props.cb} >
                     <option value="move" disabled>
                         Move to...
                     </option>

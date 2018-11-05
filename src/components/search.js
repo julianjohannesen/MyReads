@@ -25,7 +25,7 @@ export default class Search extends Component {
 					className="search-books-input-wrapper"
 					onSubmit={event => event.preventDefault()}
 				>
-					<label htmlFor="book-search">
+					<label htmlFor="book-search" class="hidden">
 					Book Search
 					<input
 						name="book-search"
