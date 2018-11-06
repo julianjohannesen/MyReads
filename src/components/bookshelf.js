@@ -8,7 +8,10 @@ export default class Bookshelf extends Component {
         <div className="bookshelf">
             <h2 className="bookshelf-title">{this.props.bookshelfTitle}</h2>
             <div className="bookshelf-books">
-                <Books showingBooks={this.props.bookList}  cb={this.props.cb} />
+                <Books 
+                    theShelf={this.props.theShelf}
+                    showingBooks={this.props.bookList}  
+                    cb={this.props.cb} />
             </div>
         </div>
     )

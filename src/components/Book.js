@@ -4,7 +4,7 @@ import ShelfChanger from './ShelfChanger';
 export default class Book extends Component {
 
     render() {
-        const book = this.props.book;
+        const book = this.props.theBook;
         return (
 
             <li>
@@ -13,7 +13,10 @@ export default class Book extends Component {
                     <div className="book-top">
                     {/*this is where we get the book cover background image */}
                         <div className="book-cover" style={{background: book.style}} />
-                        <ShelfChanger theBookID={book.id}  cb={this.props.cb} />
+                        <ShelfChanger 
+                            theBook={book}  
+                            oldShelf={this.props.theShelf}
+                            cb={this.props.cb} />
                     </div>
 
                     <div className="book-title">

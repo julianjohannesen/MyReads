@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ListBooks from './ListBooks.js';
 
 export default class ShelfChanger extends Component {
 
@@ -8,7 +7,8 @@ export default class ShelfChanger extends Component {
         return (
 
             <div className="book-shelf-changer">
-                <select onChange={this.props.cb} >
+            {/*console.log("the cb is: ", this.props.cb)*/}
+                <select onChange={(e)=> this.props.cb(e.target.value, this.props.oldShelf, this.props.theBook)} >
                     <option value="move" disabled>
                         Move to...
                     </option>
