@@ -85,6 +85,10 @@ body, .app {
   outline: none;
 }
 
+input[type="submit"] {
+  display: none;
+}
+
 .close-search {
   display: block;
   top: 20px;
@@ -136,7 +140,7 @@ body, .app {
 .book-top {
   position: relative;
   /* this should be 200 */
-  height: 2px;
+  height: 200px;
   display: flex;
   align-items: flex-end;
 }
@@ -172,4 +176,15 @@ body, .app {
   padding: 20px 10px 0;
   text-align: center;
   font-size: 0.8em;
+}
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }

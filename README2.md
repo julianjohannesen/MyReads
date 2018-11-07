@@ -28,18 +28,32 @@ Those arrays are then passed first from ListBooks to BookShelf (as this.state.cu
 
 I've done all of that and it works. 
 
-## How will the books move from shelf to shelf
+## How will the books move from shelf to shelf?
 
 This is going to involve a callback function and setState(). But where does the call to the callback function go? It goes in the select element in ShelfChanger, e.g.
 
 ```jsx
-import { moveBook } from 'ListBooks'
 // a bunch of code
-(< select onChange={moveBook} >
+(< select onChange={callback} >
 {/* more code */}
 )
 ```
-But the moveBook callback has to be defined in the same place that the state is set. Or at least, that's my understanding. 
+But the callback has to be defined in the same place that the state is set. Or at least, that's my understanding. 
+
+This took a long time to solve. At first I attempted to import the callback function into ShelfChanger, but it turns out that you have to pass it down as a prop from component to subcomponent, starting up in ListBooks and ending in ShelfChanger. 
+
+## How do you use the callback function to add and remove books from the state?
+
+Then it took a while to figure out how to add and remove books from the state. I'm was pretty pleased with myself when I came up with using a self invoking function to push the book object onto the new shelf and then return the shelf array.
+
+At first I had tried to just push the new book, e.g.
+
+```jsx
+this.setState(
+    {[newShelf] : this.state[newShelf].push(theBook)}
+)
+```
+and I didn't understand why that wasn't working. Of course, what gets returned by that push expression is the index of the new member of the array. But what I needed was the newShelf array with the new book added in. 
 
 ## After clicking on Search, using the back button does not return me to the homepage.
 

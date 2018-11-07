@@ -5,6 +5,7 @@ export default class Book extends Component {
 
     render() {
         const book = this.props.theBook;
+       
         return (
 
             <li>
@@ -12,7 +13,7 @@ export default class Book extends Component {
 
                     <div className="book-top">
                     {/*this is where we get the book cover background image */}
-                        <div className="book-cover" style={{background: book.style}} />
+                        <div className="book-cover" style={{backgroundImage:`url('../icons/notfound.jpeg')`}} />
                         <ShelfChanger 
                             theBook={book}  
                             oldShelf={this.props.theShelf}
@@ -20,11 +21,11 @@ export default class Book extends Component {
                     </div>
 
                     <div className="book-title">
-                        {book.title || "No title"}
+                        {book.title || ""}
                     </div>
 
                     <div className="book-authors">
-                        {book.authors.join(", ") || "No author"}
+                        {(book.authors && book.authors.join(", ")) || ""}
                     </div>
 
                 </div>
