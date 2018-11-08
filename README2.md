@@ -16,6 +16,12 @@ ShelfChanger    Book.js
                 |
                 ShelfChanger
 
+## Why isn't the currently reading option working in my shelf changer?
+
+## Why isn't anything displaying on the search page. 
+
+The fetch is returning the search for books. And as far as I can tell, everything is working well. I'm not getting any errors. The books just aren't showing up. Instead, I'm getting the one empty book that is the default.
+
 ## At what point do you actually fetch the books?
 
 Still don't know.
