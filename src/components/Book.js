@@ -5,9 +5,7 @@ export default class Book extends Component {
 
     render() {
         const book = this.props.theBook;
-       
         return (
-
             <li>
                 <div className="book">
 
@@ -17,7 +15,8 @@ export default class Book extends Component {
                         <ShelfChanger 
                             theBook={book}  
                             oldShelf={this.props.theShelf}
-                            cb={this.props.cb} />
+                            cb={this.props.cb} 
+                        />
                     </div>
 
                     <div className="book-title">

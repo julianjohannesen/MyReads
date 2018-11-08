@@ -12,7 +12,7 @@ export default class Search extends Component {
 
 	state = {
 		query: "",
-		showingBooks: [{title: "No results found."}]
+		showingBooks: []
 	};
 
 	handleQuery = e => this.setState({query: e.target.value});
@@ -22,13 +22,13 @@ export default class Search extends Component {
 		console.log("Submit handler fires and query = ", this.state.query);
 		if(this.searchTerms.includes(this.state.query.toLowerCase())) {
 			search(this.state.query).then(result => {
-			console.log("The query was matched with a term in search terms.\nAnd the result of the search was: ", result);
-			this.setState({showingBooks: [result]});
-		});
+				console.log("The query was matched with a term in search terms.\nAnd the result of the search was: ", result);
+				this.setState({showingBooks: result});
+			});
 		} else {
-			this.setState({showingBooks: [{title: "No results found."}]});
+			this.setState({showingBooks: "Query Term Not Found"});
 		}
-	};
+	}
 
 
 	render() {
@@ -44,7 +44,7 @@ export default class Search extends Component {
 					>
 						<label htmlFor="book-search" className="visually-hidden">
 							Book Search
-							</label>
+						</label>
 						<input
 							name="book-search"
 							onChange={this.handleQuery}

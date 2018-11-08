@@ -9,9 +9,10 @@ export default class Bookshelf extends Component {
             <h2 className="bookshelf-title">{this.props.bookshelfTitle}</h2>
             <div className="bookshelf-books">
                 <Books 
-                    theShelf={this.props.theShelf}
+                    cb={this.props.cb} 
                     showingBooks={this.props.bookList}  
-                    cb={this.props.cb} />
+                    theShelf={this.props.theShelf}
+                />
             </div>
         </div>
     )
