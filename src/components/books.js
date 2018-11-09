@@ -5,7 +5,7 @@ export default class Books extends Component {
 
 	renderBooks = () => {
 		const books = this.props.showingBooks;
-		console.log(Array.isArray(books));
+		console.log("From Books.renderBoosk(), make sure that this.props.showingBooks is actually an array. ", Array.isArray(books));
 		if(Array.isArray(books) && books.length > 0) {
 			return books.map( (book, index) => {
 				//console.log('The book is', book, ' and the index is ', index);

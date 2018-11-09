@@ -32,9 +32,9 @@ export default class Book extends Component {
                     <div className="book-top">
                         <div className="book-cover" style={bookCover()} />
                         <ShelfChanger 
-                            theBook={book}  
-                            oldShelf={this.props.theShelf}
                             cb={this.props.cb} 
+                            oldShelf={this.props.theShelf}
+                            theBook={book}  
                         />
                     </div>
 
