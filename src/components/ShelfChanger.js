@@ -7,8 +7,10 @@ export default class ShelfChanger extends Component {
         return (
 
             <div className="book-shelf-changer">
-            {/*console.log("the cb is: ", this.props.cb)*/}
-                <select onChange={(e)=> this.props.cb(e.target.value, this.props.oldShelf, this.props.theBook)} >
+                <select onChange={ (e) => {
+                    console.log("From Shelf Changer the event target value is ", e.target.value)
+                    return this.props.cb(e.target.value, this.props.oldShelf, this.props.theBook);
+                }} >
                     <option value="move" disabled>
                         Move to...
                     </option>

@@ -7,8 +7,8 @@ export default class Books extends Component {
 		const books = this.props.showingBooks;
 		console.log(Array.isArray(books));
 		if(Array.isArray(books) && books.length > 0) {
-			books.map( (book, index) => {
-				console.log('The book is', book, ' and the index is ', index);
+			return books.map( (book, index) => {
+				//console.log('The book is', book, ' and the index is ', index);
 				return (
 					<Book 
 						key={index} 

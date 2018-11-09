@@ -22,9 +22,13 @@ ShelfChanger    Book.js
 
 The fetch is returning the search for books. And as far as I can tell, everything is working well. I'm not getting any errors. The books just aren't showing up. Instead, I'm getting the one empty book that is the default.
 
-Also, I don't want that default empty book to show when there are no results.
+Figured it out.  I was missing a return statement in a function, which is why nothing was showing. 
 
-Also, I can't get a background image to load from a local file. This must have smething to do with routing. The url of the image is not available or something. 
+I also figured out how to show a "Query Term Not Found" message. And how to show a default image if there's no cover image for a book.
+
+## Why am I getting a mime type error on my service worker. 
+
+
 
 ## At what point do you actually fetch the books?
 
