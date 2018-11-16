@@ -1,6 +1,16 @@
-# Problems and Solutions
+# MyReads README
 
-# Component Tree
+# What is this?
+
+This project is inspired by Goodreads and other sites like it. It allows users to place books on virtual bookshelves; move those books from shelf to shelf; and search for and add new books. 
+
+The app uses React and for now, only implements a front end with a limited selection of books and possible search terms. The list of search terms can be found in SEARCH_TERMS.md
+
+This project was created to fulfill a requirement in Udacity's Front-End Web Development Nanodegree program.
+
+# Development Notes
+
+# React Component Tree
 
 index.js
 |
@@ -17,7 +27,9 @@ ShelfChanger    Book.js
                 ShelfChanger
 
 
-## Why am I getting the use value on select warning
+## The following is a running list of questions of the form "Why am I getting this buggy behavior?" followed by a brief explanation of the fix.
+
+## Why am I getting the "use value on select" warning
 
 So what I was doing before I fixed this was telling the shelf generator that if the shelf id on this iteration is the same as the id of the old shelf for this book, then add the "selected" attribute to this shelf. But that's not the preferred way to handle selected options in React. What you're supposed to do is create a state to represent the selected state of the options and then change that state with setState whenever the onChange event fires. So, I did that and it worked.
 
@@ -28,10 +40,6 @@ if(shelf.shelf === this.props.oldShelf) {
    return (<option key={index} value={shelf.shelf} selected >{shelf.title}</option>);
 }
 ```
-
-## Why isn't the currently reading option working in my shelf changer?
-
-There's some other very hard to understand behavior. Not sure what's going on.
 
 ## Why isn't anything displaying on the search page. 
 
@@ -47,7 +55,7 @@ I also figured out how to show a "Query Term Not Found" message. And how to show
 
 ## At what point do you actually fetch the books?
 
-Still don't know.
+At the time that Search is called. 
 
 ## How do you get each shelf of books? 
 
