@@ -1,92 +1,124 @@
-# MyReads Project
+# Problems and Solutions
 
-This is the starter template for the final assessment project for Udacity's React Fundamentals course. The goal of this template is to save you time by providing a static example of the CSS and HTML markup that may be used, but without any of the React code that is needed to complete the project. If you choose to start with this template, your job will be to add interactivity to the app by refactoring the static code in this template.
+# Component Tree
 
-Of course, you are free to start this project from scratch if you wish! Just be sure to use [Create React App](https://github.com/facebookincubator/create-react-app) to bootstrap the project.
+index.js
+|
+App.js
+|
+Search.js ----- ListBooks.js
+|               |
+Books.js        BookShelf.js
+|               |
+Book.js         Books.js
+|               |
+ShelfChanger    Book.js
+                |
+                ShelfChanger
 
-## TL;DR
 
-To get started developing right away:
+## Why am I getting the use value on select warning
 
-* install all project dependencies with `npm install`
-* start the development server with `npm start`
+So what I was doing before I fixed this was telling the shelf generator that if the shelf id on this iteration is the same as the id of the old shelf for this book, then add the "selected" attribute to this shelf. But that's not the preferred way to handle selected options in React. What you're supposed to do is create a state to represent the selected state of the options and then change that state with setState whenever the onChange event fires. So, I did that and it worked.
 
-## What You're Getting
-```bash
-├── CONTRIBUTING.md
-├── README.md - This file.
-├── SEARCH_TERMS.md # The whitelisted short collection of available search terms for you to use with your app.
-├── package.json # npm package manager file. It's unlikely that you'll need to modify this.
-├── public
-│   ├── favicon.ico # React Icon, You may change if you wish.
-│   └── index.html # DO NOT MODIFY
-└── src
-    ├── App.css # Styles for your app. Feel free to customize this as you desire.
-    ├── App.js # This is the root of your app. Contains static HTML right now.
-    ├── App.test.js # Used for testing. Provided with Create React App. Testing is encouraged, but not required.
-    ├── BooksAPI.js # A JavaScript API for the provided Udacity backend. Instructions for the methods are below.
-    ├── icons # Helpful images for your app. Use at your discretion.
-    │   ├── add.svg
-    │   ├── arrow-back.svg
-    │   └── arrow-drop-down.svg
-    ├── index.css # Global styles. You probably won't need to change anything here.
-    └── index.js # You should not need to modify this file. It is used for DOM rendering only.
-```
-
-Remember that good React design practice is to create new JS files for each component and use import/require statements to include them where they are needed.
-
-## Backend Server
-
-To simplify your development process, we've provided a backend server for you to develop against. The provided file [`BooksAPI.js`](src/BooksAPI.js) contains the methods you will need to perform necessary operations on the backend:
-
-* [`getAll`](#getall)
-* [`update`](#update)
-* [`search`](#search)
-
-### `getAll`
-
-Method Signature:
+This is the check I was using before fixing the problem. I didn't need it after fixing the problem:
 
 ```js
-getAll()
+if(shelf.shelf === this.props.oldShelf) {
+   return (<option key={index} value={shelf.shelf} selected >{shelf.title}</option>);
+}
 ```
 
-* Returns a Promise which resolves to a JSON object containing a collection of book objects.
-* This collection represents the books currently in the bookshelves in your app.
+## Why isn't the currently reading option working in my shelf changer?
 
-### `update`
+There's some other very hard to understand behavior. Not sure what's going on.
 
-Method Signature:
+## Why isn't anything displaying on the search page. 
+
+The fetch is returning the search for books. And as far as I can tell, everything is working well. I'm not getting any errors. The books just aren't showing up. Instead, I'm getting the one empty book that is the default.
+
+Figured it out.  I was missing a return statement in a function, which is why nothing was showing. 
+
+I also figured out how to show a "Query Term Not Found" message. And how to show a default image if there's no cover image for a book.
+
+## Why am I getting a mime type error on my service worker. 
+
+
+
+## At what point do you actually fetch the books?
+
+Still don't know.
+
+## How do you get each shelf of books? 
+
+Add a state object to ListBooks with entries for current, wantToRead, and read. Each of those entries is an array of book objects, or maybe book IDs. 
+
+Those arrays are then passed first from ListBooks to BookShelf (as this.state.current, etc.), then from BookShelf to Books as "showingBooks" (as this.props.bookList), and then from Books to Book as "book" (as just book).
+
+I've done all of that and it works. 
+
+## How will the books move from shelf to shelf?
+
+This is going to involve a callback function and setState(). But where does the call to the callback function go? It goes in the select element in ShelfChanger, e.g.
+
+```jsx
+// a bunch of code
+(< select onChange={callback} >
+{/* more code */}
+)
+```
+But the callback has to be defined in the same place that the state is set. Or at least, that's my understanding. 
+
+This took a long time to solve. At first I attempted to import the callback function into ShelfChanger, but it turns out that you have to pass it down as a prop from component to subcomponent, starting up in ListBooks and ending in ShelfChanger. 
+
+## How do you use the callback function to add and remove books from the state?
+
+Then it took a while to figure out how to add and remove books from the state. I'm was pretty pleased with myself when I came up with using a self invoking function to push the book object onto the new shelf and then return the shelf array.
+
+At first I had tried to just push the new book, e.g.
+
+```jsx
+this.setState(
+    {[newShelf] : this.state[newShelf].push(theBook)}
+)
+```
+and I didn't understand why that wasn't working. Of course, what gets returned by that push expression is the index of the new member of the array. But what I needed was the newShelf array with the new book added in. 
+
+## After clicking on Search, using the back button does not return me to the homepage.
+
+I've added the *Link* component (from react-router-dom) in the search component:
 
 ```js
-update(book, shelf)
+<Link to="/" className="close-search">
+	Close
+</Link>
 ```
 
-* book: `<Object>` containing at minimum an `id` attribute
-* shelf: `<String>` contains one of ["wantToRead", "currentlyReading", "read"]  
-* Returns a Promise which resolves to a JSON object containing the response data of the POST request
-
-### `search`
-
-Method Signature:
+...and list books component:
 
 ```js
-search(query)
+<div className="open-search">
+    <Link to="/search" >Add a book</Link>
+</div>
 ```
 
-* query: `<String>`
-* Returns a Promise which resolves to a JSON object containing a collection of a maximum of 20 book objects.
-* These books do not know which shelf they are on. They are raw results only. You'll need to make sure that books have the correct state while on the search page.
+... with the *to=""* attribute pointing to either the home page or to search and that got the back button working in the browser. I can now click on the add button and the URL changes. From the search bar, I can now click on the back button and the URL will change back to the homepage URL of "/". 
 
-## Important
-The backend API uses a fixed set of cached search results and is limited to a particular set of search terms, which can be found in [SEARCH_TERMS.md](SEARCH_TERMS.md). That list of terms are the _only_ terms that will work with the backend, so don't be surprised if your searches for Basket Weaving or Bubble Wrap don't come back with any results.
+## At first both the search component and the list books components were showing. I wanted only the list books view to show and to switch over to the search view only when the user clicks on the add book button.
 
-## Create React App
+I needed to import Route and Switch into App.js and then add a *Switch* statement with my *Routes* inside that statement and choose search and list books as my two components, one each for each route, using the *path* attribute and then specifying the component with the *component* attribute.
 
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app). You can find more information on how to perform common tasks [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
+```js
+<Switch>
+    <Route exact path="/search" component={Search} />
+    <Route exact path="/" component={ListBooks} />
+</Switch>
+```
 
-## Contributing
+In the template, the books are just hard coded into the JSX in App.js. I moved that hard coding to a component called ListBooks. 
 
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
+The shelves and the books that appear on those shelves are all just hard coded. I need to figure out how to use the BooksAPI to fetch all of those books and display them correctly.
 
-For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
+To do think that I think I'll need components both for Books and for Shelves. Definitely for Books.
+
+
