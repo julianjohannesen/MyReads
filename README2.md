@@ -16,6 +16,19 @@ ShelfChanger    Book.js
                 |
                 ShelfChanger
 
+
+## Why am I getting the use value on select warning
+
+So what I was doing before I fixed this was telling the shelf generator that if the shelf id on this iteration is the same as the id of the old shelf for this book, then add the "selected" attribute to this shelf. But that's not the preferred way to handle selected options in React. What you're supposed to do is create a state to represent the selected state of the options and then change that state with setState whenever the onChange event fires. So, I did that and it worked.
+
+This is the check I was using before fixing the problem. I didn't need it after fixing the problem:
+
+```js
+if(shelf.shelf === this.props.oldShelf) {
+   return (<option key={index} value={shelf.shelf} selected >{shelf.title}</option>);
+}
+```
+
 ## Why isn't the currently reading option working in my shelf changer?
 
 There's some other very hard to understand behavior. Not sure what's going on.
