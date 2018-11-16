@@ -19,10 +19,8 @@ export default class Search extends Component {
 
 	handleSubmit = (e) => {
 		e.preventDefault();
-		console.log("Submit handler fires and query = ", this.state.query);
 		if(this.searchTerms.includes(this.state.query.toLowerCase())) {
 			search(this.state.query).then(result => {
-				console.log("The query was matched with a term in search terms.\nAnd the result of the search was: ", result);
 				this.setState({showingBooks: result});
 			});
 		} else {

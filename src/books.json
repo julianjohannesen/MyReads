@@ -1,0 +1,841 @@
+{
+    "books": [
+        {
+            "title": "ACSM Fitness Book",
+            "authors": [
+                "American College of Sports Medicine"
+            ],
+            "publisher": "Human Kinetics",
+            "publishedDate": "2003",
+            "description": "Start where you are and go wherever your goals take you. No other guide offers a more comprehensive plan for developing a personal fitness program and sticking with it. Developed by the American College of Sports Medicine, ACSM Fitness Bookoffers the total package from one of the most respected organizations in the field. In its first two editions, the ACSM Fitness Booksold more than 100,000 copies. Now the classic has been enhanced and expanded with the tools you need to succeed. From simple, step-by-step instruction to new insights on nutrition, weight control, motivation, and overcoming setbacks, the authors provide the help you need to reach beyond your personal best. The key to making any fitness program effective is finding the right level of difficulty for your current ability and creating a plan that will take you to the next level. With a simple and scientifically proven fitness test, the ACSM Fitness Bookgives you everything you need to determine your starting point and monitor your ongoing progress. With sample programs, worksheets, and more, ACSM Fitness Booktakes the guesswork out of getting started and offers color photos of a variety of exercises that require minimal equipment and space. Whether your objective is to improve cardiovascular endurance, muscular strength, flexibility, or overall body condition, the ACSM Fitness Bookwill lay out a proven plan for reaching your goal in a way that works for you. Richly illustrated and easy to follow, it is the one book you need for the tools, and the motivation, to put your personal fitness program on track.",
+            "industryIdentifiers": [
+                {
+                    "type": "ISBN_10",
+                    "identifier": "073604406X"
+                },
+                {
+                    "type": "ISBN_13",
+                    "identifier": "9780736044066"
+                }
+            ],
+            "readingModes": {
+                "text": false,
+                "image": true
+            },
+            "pageCount": 175,
+            "printType": "BOOK",
+            "categories": [
+                "Health & Fitness"
+            ],
+            "averageRating": 5,
+            "ratingsCount": 1,
+            "maturityRating": "NOT_MATURE",
+            "allowAnonLogging": false,
+            "contentVersion": "0.4.1.0.preview.1",
+            "imageLinks": {
+                "smallThumbnail": "http://books.google.com/books/content?id=qpdRgb9X3EcC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+                "thumbnail": "http://books.google.com/books/content?id=qpdRgb9X3EcC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+            },
+            "language": "en",
+            "previewLink": "http://books.google.com/books?id=qpdRgb9X3EcC&printsec=frontcover&dq=fitness&hl=&cd=1&source=gbs_api",
+            "infoLink": "http://books.google.com/books?id=qpdRgb9X3EcC&dq=fitness&hl=&source=gbs_api",
+            "canonicalVolumeLink": "https://books.google.com/books/about/ACSM_Fitness_Book.html?hl=&id=qpdRgb9X3EcC",
+            "id": "qpdRgb9X3EcC"
+        },
+        {
+            "title": "Fitness!",
+            "authors": [
+                "Karen Mazzeo",
+                "Lauren Mangili"
+            ],
+            "publisher": "Cengage Learning",
+            "publishedDate": "2012-02-03",
+            "description": "Cengage Learning Activity Series From aerobics and yoga to bowling, tennis, weight training, and more. Cengage Learning offers a complete line of activities texts to meet your teaching needs. Written for individuals of all skill levels and backgrounds, the Cengage Learning Activity Series goes beyond the mere fundamentals, showing students how to improve, excel, and simply get more enjoyment from their favorite physical activities. FITNESS THROUGH AEROBICS, STEP TRAINING, AND WALKING, Fifth Edition, uses an easy-to-follow sequential learning order that provides methods to achieve total fitness goals. The text covers the principles and techniques of aerobic dance exercise, step training, and fitness walking, with a new focus on strength training. Students will be able to structure a complete physical and mental training program that can work for a lifetime. Important Notice: Media content referenced within the product description or the product text may not be available in the ebook version.",
+            "industryIdentifiers": [
+                {
+                    "type": "ISBN_13",
+                    "identifier": "9780840048097"
+                },
+                {
+                    "type": "ISBN_10",
+                    "identifier": "0840048092"
+                }
+            ],
+            "readingModes": {
+                "text": false,
+                "image": true
+            },
+            "pageCount": 272,
+            "printType": "BOOK",
+            "categories": [
+                "Medical"
+            ],
+            "maturityRating": "NOT_MATURE",
+            "allowAnonLogging": false,
+            "contentVersion": "preview-1.0.0",
+            "imageLinks": {
+                "smallThumbnail": "http://books.google.com/books/content?id=zpQ4Vv30fAgC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+                "thumbnail": "http://books.google.com/books/content?id=zpQ4Vv30fAgC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+            },
+            "language": "en",
+            "previewLink": "http://books.google.com/books?id=zpQ4Vv30fAgC&printsec=frontcover&dq=fitness&hl=&cd=2&source=gbs_api",
+            "infoLink": "http://books.google.com/books?id=zpQ4Vv30fAgC&dq=fitness&hl=&source=gbs_api",
+            "canonicalVolumeLink": "https://books.google.com/books/about/Fitness.html?hl=&id=zpQ4Vv30fAgC",
+            "id": "zpQ4Vv30fAgC"
+        },
+        {
+            "title": "Barre Fitness",
+            "subtitle": "Barre Exercises You Can Do Anywhere for Flexibility, Core Strength, and a Lean Body",
+            "authors": [
+                "Fred DeVito",
+                "Elisabeth Halfpapp"
+            ],
+            "publisher": "Fair Winds Press (MA)",
+            "publishedDate": "2015-11-15",
+            "description": "Barre Fitness provides 100 at-home barre exercises from the fundamentals to more complex moves with a focus on building strength and improving technique--no barre required!",
+            "industryIdentifiers": [
+                {
+                    "type": "ISBN_13",
+                    "identifier": "9781592336913"
+                },
+                {
+                    "type": "ISBN_10",
+                    "identifier": "1592336914"
+                }
+            ],
+            "readingModes": {
+                "text": false,
+                "image": true
+            },
+            "pageCount": 176,
+            "printType": "BOOK",
+            "categories": [
+                "Health & Fitness"
+            ],
+            "maturityRating": "NOT_MATURE",
+            "allowAnonLogging": false,
+            "contentVersion": "preview-1.0.0",
+            "imageLinks": {
+                "smallThumbnail": "http://books.google.com/books/content?id=LKWSCgAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+                "thumbnail": "http://books.google.com/books/content?id=LKWSCgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+            },
+            "language": "en",
+            "previewLink": "http://books.google.com/books?id=LKWSCgAAQBAJ&printsec=frontcover&dq=fitness&hl=&cd=3&source=gbs_api",
+            "infoLink": "http://books.google.com/books?id=LKWSCgAAQBAJ&dq=fitness&hl=&source=gbs_api",
+            "canonicalVolumeLink": "https://books.google.com/books/about/Barre_Fitness.html?hl=&id=LKWSCgAAQBAJ",
+            "id": "LKWSCgAAQBAJ"
+        },
+        {
+            "title": "Fitness and Health",
+            "authors": [
+                "Brian J. Sharkey",
+                "Steven E. Gaskill"
+            ],
+            "publisher": "Human Kinetics",
+            "publishedDate": "2007",
+            "description": "This book explains in plain English how the body responds to physical activity, why physical activity is so important to health, and how best to become physically active. You'll learn how to create programs to improve your aerobic fitness; increase your muscular strength, endurance, and flexibility; control your diet and weight; and improve your performance at work and in sports. With more than 100,000 copies sold, this classic reference (formerly titled Physiology of Fitness) is your source for accurate and insightful information. Now updated and redesigned, this comprehensive text will show you how to improve and maintain your health through regular and enjoyable physical activity.",
+            "industryIdentifiers": [
+                {
+                    "type": "ISBN_10",
+                    "identifier": "0736056149"
+                },
+                {
+                    "type": "ISBN_13",
+                    "identifier": "9780736056144"
+                }
+            ],
+            "readingModes": {
+                "text": false,
+                "image": true
+            },
+            "pageCount": 429,
+            "printType": "BOOK",
+            "categories": [
+                "Health & Fitness"
+            ],
+            "averageRating": 4,
+            "ratingsCount": 3,
+            "maturityRating": "NOT_MATURE",
+            "allowAnonLogging": false,
+            "contentVersion": "2.3.0.0.preview.1",
+            "imageLinks": {
+                "smallThumbnail": "http://books.google.com/books/content?id=iyn4xULK4JUC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+                "thumbnail": "http://books.google.com/books/content?id=iyn4xULK4JUC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+            },
+            "language": "en",
+            "previewLink": "http://books.google.com/books?id=iyn4xULK4JUC&printsec=frontcover&dq=fitness&hl=&cd=4&source=gbs_api",
+            "infoLink": "http://books.google.com/books?id=iyn4xULK4JUC&dq=fitness&hl=&source=gbs_api",
+            "canonicalVolumeLink": "https://books.google.com/books/about/Fitness_and_Health.html?hl=&id=iyn4xULK4JUC",
+            "id": "iyn4xULK4JUC"
+        },
+        {
+            "title": "Fitness Walking 2nd Editon",
+            "publisher": "Human Kinetics",
+            "publishedDate": "1995",
+            "industryIdentifiers": [
+                {
+                    "type": "ISBN_10",
+                    "identifier": "1450408583"
+                },
+                {
+                    "type": "ISBN_13",
+                    "identifier": "9781450408585"
+                }
+            ],
+            "readingModes": {
+                "text": false,
+                "image": true
+            },
+            "pageCount": 160,
+            "printType": "BOOK",
+            "averageRating": 3,
+            "ratingsCount": 2,
+            "maturityRating": "NOT_MATURE",
+            "allowAnonLogging": true,
+            "contentVersion": "preview-1.0.0",
+            "panelizationSummary": {
+                "containsEpubBubbles": false,
+                "containsImageBubbles": false
+            },
+            "imageLinks": {
+                "smallThumbnail": "http://books.google.com/books/content?id=GSbaYnBTFtsC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+                "thumbnail": "http://books.google.com/books/content?id=GSbaYnBTFtsC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+            },
+            "language": "en",
+            "previewLink": "http://books.google.com/books?id=GSbaYnBTFtsC&printsec=frontcover&dq=fitness&hl=&cd=5&source=gbs_api",
+            "infoLink": "https://play.google.com/store/books/details?id=GSbaYnBTFtsC&source=gbs_api",
+            "canonicalVolumeLink": "https://market.android.com/details?id=book-GSbaYnBTFtsC",
+            "id": "GSbaYnBTFtsC"
+        },
+        {
+            "title": "Fitness for Work",
+            "subtitle": "The Medical Aspects",
+            "authors": [
+                "Keith T Palmer",
+                "Ian Brown",
+                "John Hobson"
+            ],
+            "publisher": "OUP Oxford",
+            "publishedDate": "2013-01-24",
+            "description": "The 'bible' of occupational health, Fitness for Work is the most in-depth and comprehensive resource available on the effects of ill health on employment. Expert authors provide practical guidance on the employment potential of anyone with an illness or disability, as well as examining the art and skills of fitness for work assessment and its ethical framework. Fully revised and updated, Fitness for Work, fifth edition now includes, for the first time, important new chapters on work in cancer survivors, health promotion in the workplace, and managing and avoiding sickness absence. Following in the all-encompassing and comprehensive tradition of the previous editions, it also continues to provide coverage of and information on support for rehabilitation, work at older ages, health screening, and the full array of medical and surgical health problems that can affect fitness for work. Chapters are organized by medical condition to enable effortless reference, and are co-authored by a topic specialist and a specialist occupational physician providing a comprehensive view of the subject. The latest developments in legislation and government guidelines are included ensuring the book is up-to-date and provides the most current procedures in the field. Fitness for Work delivers a wealth of valuable consensus guidance, codes of practice, and locally evolved standards to enable well-informed clinical judgements to be made. All occupational health professionals should have a copy of this highly-regarded resource on their desks.",
+            "industryIdentifiers": [
+                {
+                    "type": "ISBN_13",
+                    "identifier": "9780191663888"
+                },
+                {
+                    "type": "ISBN_10",
+                    "identifier": "0191663883"
+                }
+            ],
+            "readingModes": {
+                "text": true,
+                "image": true
+            },
+            "pageCount": 736,
+            "printType": "BOOK",
+            "categories": [
+                "Medical"
+            ],
+            "maturityRating": "NOT_MATURE",
+            "allowAnonLogging": true,
+            "contentVersion": "3.5.7.0.preview.3",
+            "panelizationSummary": {
+                "containsEpubBubbles": false,
+                "containsImageBubbles": false
+            },
+            "imageLinks": {
+                "smallThumbnail": "http://books.google.com/books/content?id=Du_mTZwlWRUC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+                "thumbnail": "http://books.google.com/books/content?id=Du_mTZwlWRUC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+            },
+            "language": "en",
+            "previewLink": "http://books.google.com/books?id=Du_mTZwlWRUC&printsec=frontcover&dq=fitness&hl=&cd=6&source=gbs_api",
+            "infoLink": "https://play.google.com/store/books/details?id=Du_mTZwlWRUC&source=gbs_api",
+            "canonicalVolumeLink": "https://market.android.com/details?id=book-Du_mTZwlWRUC",
+            "id": "Du_mTZwlWRUC"
+        },
+        {
+            "title": "Practical Fitness Testing",
+            "subtitle": "Analysis in Exercise and Sport",
+            "authors": [
+                "Morc Coulson",
+                "David Archer"
+            ],
+            "publisher": "A&amp;C Black",
+            "publishedDate": "2009-09-01",
+            "description": "A comprehensive and up to date guide to testing fitness, ideal for coaches, fitness industry professionals and anyone planning a training program for clients or groups.",
+            "industryIdentifiers": [
+                {
+                    "type": "ISBN_13",
+                    "identifier": "9781408110225"
+                },
+                {
+                    "type": "ISBN_10",
+                    "identifier": "1408110229"
+                }
+            ],
+            "readingModes": {
+                "text": false,
+                "image": true
+            },
+            "pageCount": 256,
+            "printType": "BOOK",
+            "categories": [
+                "Sports & Recreation"
+            ],
+            "maturityRating": "NOT_MATURE",
+            "allowAnonLogging": false,
+            "contentVersion": "3.20.0.0.preview.1",
+            "imageLinks": {
+                "smallThumbnail": "http://books.google.com/books/content?id=YrBpH8l9RMoC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+                "thumbnail": "http://books.google.com/books/content?id=YrBpH8l9RMoC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+            },
+            "language": "en",
+            "previewLink": "http://books.google.com/books?id=YrBpH8l9RMoC&printsec=frontcover&dq=fitness&hl=&cd=7&source=gbs_api",
+            "infoLink": "http://books.google.com/books?id=YrBpH8l9RMoC&dq=fitness&hl=&source=gbs_api",
+            "canonicalVolumeLink": "https://books.google.com/books/about/Practical_Fitness_Testing.html?hl=&id=YrBpH8l9RMoC",
+            "id": "YrBpH8l9RMoC"
+        },
+        {
+            "title": "Yoga for Fitness and Wellness",
+            "authors": [
+                "Ravi Dykema"
+            ],
+            "publisher": "Cengage Learning",
+            "publishedDate": "2011-01-01",
+            "description": "Cengage Learning Activity Series From aerobics and yoga -- to bowling, tennis, weight training, and more -- Cengage Learning offers a complete line of activities texts to meet your teaching needs. Written for individuals of all skill levels and backgrounds, the Cengage Learning Activity Series goes beyond the mere fundamentals, showing students how to improve, excel, and simply get more enjoyment from their favorite physical activities. YOGA FOR FITNESS AND WELLNESS, 2nd Edition, introduces students to the ancient practice of yoga. Covering the history and philosophy of yoga and the theories of Hatha Yoga specifically, the text also explores yoga exercises, including breathing, stretching and strengthening, and relaxation and meditation. Important Notice: Media content referenced within the product description or the product text may not be available in the ebook version.",
+            "industryIdentifiers": [
+                {
+                    "type": "ISBN_13",
+                    "identifier": "9780840048110"
+                },
+                {
+                    "type": "ISBN_10",
+                    "identifier": "0840048114"
+                }
+            ],
+            "readingModes": {
+                "text": false,
+                "image": true
+            },
+            "pageCount": 192,
+            "printType": "BOOK",
+            "categories": [
+                "Health & Fitness"
+            ],
+            "maturityRating": "NOT_MATURE",
+            "allowAnonLogging": false,
+            "contentVersion": "0.0.1.0.preview.1",
+            "imageLinks": {
+                "smallThumbnail": "http://books.google.com/books/content?id=DuYgIFkhBsQC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+                "thumbnail": "http://books.google.com/books/content?id=DuYgIFkhBsQC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+            },
+            "language": "en",
+            "previewLink": "http://books.google.com/books?id=DuYgIFkhBsQC&printsec=frontcover&dq=fitness&hl=&cd=8&source=gbs_api",
+            "infoLink": "http://books.google.com/books?id=DuYgIFkhBsQC&dq=fitness&hl=&source=gbs_api",
+            "canonicalVolumeLink": "https://books.google.com/books/about/Yoga_for_Fitness_and_Wellness.html?hl=&id=DuYgIFkhBsQC",
+            "id": "DuYgIFkhBsQC"
+        },
+        {
+            "title": "Health Fitness Management",
+            "subtitle": "A Comprehensive Resource for Managing and Operating Programs and Facilities",
+            "authors": [
+                "Mike Bates"
+            ],
+            "publisher": "Human Kinetics",
+            "publishedDate": "2008",
+            "description": "\"Health Fitness Management, Second Edition,\" provides an in-depth picture of the energetic, varied, and rewarding role of the health and fitness club manager. With contributions from leading experts in the fitness industry and several new chapters, this second edition is the most authoritative and field-tested guide to management success.",
+            "industryIdentifiers": [
+                {
+                    "type": "ISBN_10",
+                    "identifier": "073606205X"
+                },
+                {
+                    "type": "ISBN_13",
+                    "identifier": "9780736062053"
+                }
+            ],
+            "readingModes": {
+                "text": false,
+                "image": true
+            },
+            "pageCount": 381,
+            "printType": "BOOK",
+            "categories": [
+                "Business & Economics"
+            ],
+            "averageRating": 3,
+            "ratingsCount": 1,
+            "maturityRating": "NOT_MATURE",
+            "allowAnonLogging": false,
+            "contentVersion": "preview-1.0.0",
+            "imageLinks": {
+                "smallThumbnail": "http://books.google.com/books/content?id=m5X9PUlOZcEC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+                "thumbnail": "http://books.google.com/books/content?id=m5X9PUlOZcEC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+            },
+            "language": "en",
+            "previewLink": "http://books.google.com/books?id=m5X9PUlOZcEC&printsec=frontcover&dq=fitness&hl=&cd=9&source=gbs_api",
+            "infoLink": "http://books.google.com/books?id=m5X9PUlOZcEC&dq=fitness&hl=&source=gbs_api",
+            "canonicalVolumeLink": "https://books.google.com/books/about/Health_Fitness_Management.html?hl=&id=m5X9PUlOZcEC",
+            "id": "m5X9PUlOZcEC"
+        },
+        {
+            "title": "Advanced Fitness Assessment and Exercise Prescription 7th Edition",
+            "subtitle": "",
+            "authors": [
+                "Heyward, Vivian H.",
+                "Gibson, Ann"
+            ],
+            "publisher": "Human Kinetics",
+            "publishedDate": "2014-04-23",
+            "description": "Built around physical fitness components, this text shows how to assess each fitness component and then how to design exercise programs based on that assessment. It bridges the gap between research and practice for exercise science students and fitness professionals.",
+            "industryIdentifiers": [
+                {
+                    "type": "ISBN_13",
+                    "identifier": "9781450466004"
+                },
+                {
+                    "type": "ISBN_10",
+                    "identifier": "1450466001"
+                }
+            ],
+            "readingModes": {
+                "text": false,
+                "image": true
+            },
+            "pageCount": 552,
+            "printType": "BOOK",
+            "categories": [
+                "Health & Fitness"
+            ],
+            "averageRating": 5,
+            "ratingsCount": 1,
+            "maturityRating": "NOT_MATURE",
+            "allowAnonLogging": false,
+            "contentVersion": "preview-1.0.0",
+            "imageLinks": {
+                "smallThumbnail": "http://books.google.com/books/content?id=PkdoAwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+                "thumbnail": "http://books.google.com/books/content?id=PkdoAwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+            },
+            "language": "en",
+            "previewLink": "http://books.google.com/books?id=PkdoAwAAQBAJ&printsec=frontcover&dq=fitness&hl=&cd=10&source=gbs_api",
+            "infoLink": "http://books.google.com/books?id=PkdoAwAAQBAJ&dq=fitness&hl=&source=gbs_api",
+            "canonicalVolumeLink": "https://books.google.com/books/about/Advanced_Fitness_Assessment_and_Exercise.html?hl=&id=PkdoAwAAQBAJ",
+            "id": "PkdoAwAAQBAJ"
+        },
+        {
+            "title": "Luminous Mind",
+            "subtitle": "The Essential Guide to Meditation and Mind Fitness",
+            "authors": [
+                "Joel Levey",
+                "Michelle Levey"
+            ],
+            "publisher": "Conari Press",
+            "publishedDate": "2006-08-01",
+            "description": "\"Luminous Mind\" is the definitive mental fitness manual, offering unique and uncomplicated ways to engage fully in life. Included in the book are techniques for meditation, focus, and relaxation that have helped Olympic athletes, members of the armed forces, and many others.",
+            "industryIdentifiers": [
+                {
+                    "type": "ISBN_10",
+                    "identifier": "1573242969"
+                },
+                {
+                    "type": "ISBN_13",
+                    "identifier": "9781573242967"
+                }
+            ],
+            "readingModes": {
+                "text": true,
+                "image": true
+            },
+            "pageCount": 256,
+            "printType": "BOOK",
+            "categories": [
+                "Self-Help"
+            ],
+            "averageRating": 5,
+            "ratingsCount": 1,
+            "maturityRating": "NOT_MATURE",
+            "allowAnonLogging": true,
+            "contentVersion": "1.0.3.0.preview.3",
+            "imageLinks": {
+                "smallThumbnail": "http://books.google.com/books/content?id=ITrxosiRNTkC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+                "thumbnail": "http://books.google.com/books/content?id=ITrxosiRNTkC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+            },
+            "language": "en",
+            "previewLink": "http://books.google.com/books?id=ITrxosiRNTkC&printsec=frontcover&dq=fitness&hl=&cd=11&source=gbs_api",
+            "infoLink": "http://books.google.com/books?id=ITrxosiRNTkC&dq=fitness&hl=&source=gbs_api",
+            "canonicalVolumeLink": "https://books.google.com/books/about/Luminous_Mind.html?hl=&id=ITrxosiRNTkC",
+            "id": "ITrxosiRNTkC"
+        },
+        {
+            "title": "Physical Fitness",
+            "subtitle": "A Guide for Individuals with Lower Limb Loss",
+            "authors": [
+                "Ernest M. Burgess",
+                "Albert Rappoport"
+            ],
+            "publisher": "DIANE Publishing",
+            "publishedDate": "1993",
+            "description": "Discusses the importance of physical conditioning and the ways in which persons with an amputation can achieve fitness by adapting their prosthesis to the exercise regime &/or following a conditioning program without it. Several amputation levels are covered and variations on how the desired exercises can be accomplished are included. Covers the following conditioning exercises: calisthenics, stretching, shoulders, legs, abdominals, and more. List of special resources related to sports for the disabled. Glossary and bibliography. Over 100 b/w photos.",
+            "industryIdentifiers": [
+                {
+                    "type": "ISBN_10",
+                    "identifier": "1568064322"
+                },
+                {
+                    "type": "ISBN_13",
+                    "identifier": "9781568064321"
+                }
+            ],
+            "readingModes": {
+                "text": true,
+                "image": true
+            },
+            "pageCount": 245,
+            "printType": "BOOK",
+            "categories": [
+                "Amputees"
+            ],
+            "maturityRating": "NOT_MATURE",
+            "allowAnonLogging": true,
+            "contentVersion": "0.0.2.0.preview.3",
+            "imageLinks": {
+                "smallThumbnail": "http://books.google.com/books/content?id=4nnXgaEuNgsC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+                "thumbnail": "http://books.google.com/books/content?id=4nnXgaEuNgsC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+            },
+            "language": "en",
+            "previewLink": "http://books.google.com/books?id=4nnXgaEuNgsC&printsec=frontcover&dq=fitness&hl=&cd=12&source=gbs_api",
+            "infoLink": "https://play.google.com/store/books/details?id=4nnXgaEuNgsC&source=gbs_api",
+            "canonicalVolumeLink": "https://market.android.com/details?id=book-4nnXgaEuNgsC",
+            "id": "4nnXgaEuNgsC"
+        },
+        {
+            "title": "ACSM's Complete Guide to Fitness & Health",
+            "publisher": "Human Kinetics",
+            "industryIdentifiers": [
+                {
+                    "type": "ISBN_13",
+                    "identifier": "9781450429016"
+                },
+                {
+                    "type": "ISBN_10",
+                    "identifier": "1450429017"
+                }
+            ],
+            "readingModes": {
+                "text": false,
+                "image": true
+            },
+            "printType": "BOOK",
+            "averageRating": 4.5,
+            "ratingsCount": 5,
+            "maturityRating": "NOT_MATURE",
+            "allowAnonLogging": true,
+            "contentVersion": "preview-1.0.0",
+            "panelizationSummary": {
+                "containsEpubBubbles": false,
+                "containsImageBubbles": false
+            },
+            "imageLinks": {
+                "smallThumbnail": "http://books.google.com/books/content?id=1VqqI_Q1mTwC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+                "thumbnail": "http://books.google.com/books/content?id=1VqqI_Q1mTwC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+            },
+            "language": "en",
+            "previewLink": "http://books.google.com/books?id=1VqqI_Q1mTwC&printsec=frontcover&dq=fitness&hl=&cd=13&source=gbs_api",
+            "infoLink": "https://play.google.com/store/books/details?id=1VqqI_Q1mTwC&source=gbs_api",
+            "canonicalVolumeLink": "https://market.android.com/details?id=book-1VqqI_Q1mTwC",
+            "id": "1VqqI_Q1mTwC"
+        },
+        {
+            "title": "Kayaking for Fitness",
+            "subtitle": "An 8-Week Program to Get Fit and Have Fun",
+            "authors": [
+                "Jodi Bigelow"
+            ],
+            "publisher": "The Heliconia Press",
+            "publishedDate": "2008",
+            "description": "An 8-week program to get fit and have fun. Kayaks are great for recreational paddling, but did you know that you can also use your boat to get fit, tone your muscles and develop endurance? Kayaking for Fitness shows how anyone of any age or fitness level can use kayaking to get a great full body workout, or as a low-impact complement to other sports like running or cycling. Couch potatoes to serious competitors are invited to join coach, marathon paddler, and Canadian Downriver Racing Champion Jodi Bigelow as he guides kayakers of all levels to greater health, increased energy and full body fitness. Kayaking for Fitness offeres a comprehensive 8-week program to get fit fast, with kayak workouts tailored for beginner, intermediate and advanced paddlers.",
+            "industryIdentifiers": [
+                {
+                    "type": "ISBN_13",
+                    "identifier": "9781896980379"
+                },
+                {
+                    "type": "ISBN_10",
+                    "identifier": "1896980376"
+                }
+            ],
+            "readingModes": {
+                "text": false,
+                "image": true
+            },
+            "pageCount": 153,
+            "printType": "BOOK",
+            "categories": [
+                "Health & Fitness"
+            ],
+            "maturityRating": "NOT_MATURE",
+            "allowAnonLogging": false,
+            "contentVersion": "1.1.0.0.preview.1",
+            "imageLinks": {
+                "smallThumbnail": "http://books.google.com/books/content?id=2GeSg6F1utEC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+                "thumbnail": "http://books.google.com/books/content?id=2GeSg6F1utEC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+            },
+            "language": "en",
+            "previewLink": "http://books.google.com/books?id=2GeSg6F1utEC&printsec=frontcover&dq=fitness&hl=&cd=14&source=gbs_api",
+            "infoLink": "http://books.google.com/books?id=2GeSg6F1utEC&dq=fitness&hl=&source=gbs_api",
+            "canonicalVolumeLink": "https://books.google.com/books/about/Kayaking_for_Fitness.html?hl=&id=2GeSg6F1utEC",
+            "id": "2GeSg6F1utEC"
+        },
+        {
+            "title": "Fitness Swimming 2nd Edition",
+            "publisher": "Human Kinetics",
+            "industryIdentifiers": [
+                {
+                    "type": "ISBN_10",
+                    "identifier": "1450407579"
+                },
+                {
+                    "type": "ISBN_13",
+                    "identifier": "9781450407571"
+                }
+            ],
+            "readingModes": {
+                "text": true,
+                "image": true
+            },
+            "printType": "BOOK",
+            "averageRating": 5,
+            "ratingsCount": 5,
+            "maturityRating": "NOT_MATURE",
+            "allowAnonLogging": true,
+            "contentVersion": "0.0.2.0.preview.3",
+            "panelizationSummary": {
+                "containsEpubBubbles": false,
+                "containsImageBubbles": false
+            },
+            "imageLinks": {
+                "smallThumbnail": "http://books.google.com/books/content?id=85faPtFJH50C&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+                "thumbnail": "http://books.google.com/books/content?id=85faPtFJH50C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+            },
+            "language": "en",
+            "previewLink": "http://books.google.com/books?id=85faPtFJH50C&printsec=frontcover&dq=fitness&hl=&cd=15&source=gbs_api",
+            "infoLink": "https://play.google.com/store/books/details?id=85faPtFJH50C&source=gbs_api",
+            "canonicalVolumeLink": "https://market.android.com/details?id=book-85faPtFJH50C",
+            "id": "85faPtFJH50C"
+        },
+        {
+            "title": "ACSM's Health-Related Physical Fitness Assessment Manual",
+            "authors": [
+                "American College of Sports Medicine"
+            ],
+            "publisher": "Lippincott Williams & Wilkins",
+            "publishedDate": "2013-01-21",
+            "description": "From the American College of Sports Medicine (ACSM), this text provides the information necessary to develop skills for assessing an individual's health-related physical fitness. It provides a practical \"how-to-do-it\" approach for performing assessment skills effectively, and an understanding of the theory behind and the importance of each skill or assessment. The Fourth Edition includes updated references to ACSM's Guidelines for Exercise Testing and Prescription, Ninth Edition, more diagrams and pictures highlighting assessment techniques, and new material on physical activity assessments, considerations for medication usage, and common measurement errors. A companion Website includes an Image Collection, a Test Generator, and PowerPoint Slides.",
+            "industryIdentifiers": [
+                {
+                    "type": "ISBN_13",
+                    "identifier": "9781451115680"
+                },
+                {
+                    "type": "ISBN_10",
+                    "identifier": "1451115687"
+                }
+            ],
+            "readingModes": {
+                "text": false,
+                "image": true
+            },
+            "pageCount": 192,
+            "printType": "BOOK",
+            "categories": [
+                "Medical"
+            ],
+            "maturityRating": "NOT_MATURE",
+            "allowAnonLogging": false,
+            "contentVersion": "0.2.0.0.preview.1",
+            "imageLinks": {
+                "smallThumbnail": "http://books.google.com/books/content?id=ZPo96rd3PpAC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+                "thumbnail": "http://books.google.com/books/content?id=ZPo96rd3PpAC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+            },
+            "language": "en",
+            "previewLink": "http://books.google.com/books?id=ZPo96rd3PpAC&printsec=frontcover&dq=fitness&hl=&cd=16&source=gbs_api",
+            "infoLink": "http://books.google.com/books?id=ZPo96rd3PpAC&dq=fitness&hl=&source=gbs_api",
+            "canonicalVolumeLink": "https://books.google.com/books/about/ACSM_s_Health_Related_Physical_Fitness_A.html?hl=&id=ZPo96rd3PpAC",
+            "id": "ZPo96rd3PpAC"
+        },
+        {
+            "title": "Fitness Professional's Handbook 7th Edition",
+            "subtitle": "",
+            "authors": [
+                "Howley, Edward T.",
+                "Thompson, Dixie"
+            ],
+            "publisher": "Human Kinetics",
+            "publishedDate": "2016-10-10",
+            "description": "Fitness Professional’s Handbook, Seventh Edition, provides current and future fitness professionals with the knowledge to screen participants, conduct standardized fitness tests, evaluate the major components of fitness, and prescribe appropriate exercise.",
+            "industryIdentifiers": [
+                {
+                    "type": "ISBN_13",
+                    "identifier": "9781492523376"
+                },
+                {
+                    "type": "ISBN_10",
+                    "identifier": "1492523372"
+                }
+            ],
+            "readingModes": {
+                "text": false,
+                "image": true
+            },
+            "pageCount": 592,
+            "printType": "BOOK",
+            "categories": [
+                "Health & Fitness"
+            ],
+            "averageRating": 1,
+            "ratingsCount": 1,
+            "maturityRating": "NOT_MATURE",
+            "allowAnonLogging": false,
+            "contentVersion": "preview-1.0.0",
+            "panelizationSummary": {
+                "containsEpubBubbles": false,
+                "containsImageBubbles": false
+            },
+            "imageLinks": {
+                "smallThumbnail": "http://books.google.com/books/content?id=6z7kDAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+                "thumbnail": "http://books.google.com/books/content?id=6z7kDAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+            },
+            "language": "en",
+            "previewLink": "http://books.google.com/books?id=6z7kDAAAQBAJ&printsec=frontcover&dq=fitness&hl=&cd=17&source=gbs_api",
+            "infoLink": "http://books.google.com/books?id=6z7kDAAAQBAJ&dq=fitness&hl=&source=gbs_api",
+            "canonicalVolumeLink": "https://books.google.com/books/about/Fitness_Professional_s_Handbook_7th_Edit.html?hl=&id=6z7kDAAAQBAJ",
+            "id": "6z7kDAAAQBAJ"
+        },
+        {
+            "title": "Creative Fitness",
+            "subtitle": "Applying Health Psychology and Exercise Science to Everyday Life",
+            "authors": [
+                "Henry B. Biller"
+            ],
+            "publisher": "Greenwood Publishing Group",
+            "publishedDate": "2002-01-01",
+            "description": "Biller integrates exercise, nutrition, and health issues within an applied developmental psychological framework. Readers are presented with ways of making fitness an enjoyable and positive force in their daily lives. Biller's primary mission is to encourage a healthy lifestyle that enriches self-awareness and personal growth.",
+            "industryIdentifiers": [
+                {
+                    "type": "ISBN_10",
+                    "identifier": "0865693269"
+                },
+                {
+                    "type": "ISBN_13",
+                    "identifier": "9780865693265"
+                }
+            ],
+            "readingModes": {
+                "text": true,
+                "image": true
+            },
+            "pageCount": 249,
+            "printType": "BOOK",
+            "categories": [
+                "Health & Fitness"
+            ],
+            "averageRating": 4,
+            "ratingsCount": 1,
+            "maturityRating": "NOT_MATURE",
+            "allowAnonLogging": false,
+            "contentVersion": "0.0.2.0.preview.3",
+            "imageLinks": {
+                "smallThumbnail": "http://books.google.com/books/content?id=jqm_k9NpL0QC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+                "thumbnail": "http://books.google.com/books/content?id=jqm_k9NpL0QC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+            },
+            "language": "en",
+            "previewLink": "http://books.google.com/books?id=jqm_k9NpL0QC&printsec=frontcover&dq=fitness&hl=&cd=18&source=gbs_api",
+            "infoLink": "https://play.google.com/store/books/details?id=jqm_k9NpL0QC&source=gbs_api",
+            "canonicalVolumeLink": "https://market.android.com/details?id=book-jqm_k9NpL0QC",
+            "id": "jqm_k9NpL0QC"
+        },
+        {
+            "title": "Physical fitness and health promotion in active aging",
+            "authors": [
+                "Keizō Shiraki",
+                "Sueko Sagawa",
+                "Mohamed K. Yousef"
+            ],
+            "publishedDate": "2001-01",
+            "industryIdentifiers": [
+                {
+                    "type": "OTHER",
+                    "identifier": "STANFORD:36105025307880"
+                }
+            ],
+            "readingModes": {
+                "text": false,
+                "image": false
+            },
+            "pageCount": 225,
+            "printType": "BOOK",
+            "categories": [
+                "Health & Fitness"
+            ],
+            "maturityRating": "NOT_MATURE",
+            "allowAnonLogging": false,
+            "contentVersion": "preview-1.0.0",
+            "imageLinks": {
+                "smallThumbnail": "http://books.google.com/books/content?id=XSpFAQAAIAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+                "thumbnail": "http://books.google.com/books/content?id=XSpFAQAAIAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+            },
+            "language": "en",
+            "previewLink": "http://books.google.com/books?id=XSpFAQAAIAAJ&q=fitness&dq=fitness&hl=&cd=19&source=gbs_api",
+            "infoLink": "http://books.google.com/books?id=XSpFAQAAIAAJ&dq=fitness&hl=&source=gbs_api",
+            "canonicalVolumeLink": "https://books.google.com/books/about/Physical_fitness_and_health_promotion_in.html?hl=&id=XSpFAQAAIAAJ",
+            "id": "XSpFAQAAIAAJ"
+        },
+        {
+            "title": "Body Panic",
+            "subtitle": "Gender, Health, and the Selling of Fitness",
+            "authors": [
+                "Shari L. Dworkin",
+                "Faye Linda Wachs"
+            ],
+            "publisher": "NYU Press",
+            "publishedDate": "2009-02-01",
+            "description": "Are you ripped? Do you need to work on your abs? Do you know your ideal body weight? Your body fat index? Increasingly, Americans are being sold on a fitness ideal — not just thin but toned, not just muscular but cut — that is harder and harder to reach. In Body Panic, Shari L. Dworkin and Faye Linda Wachs ask why. How did these particular body types come to be “fit”? And how is it that having an unfit, or “bad,” body gets conflated with being an unfit, or “bad,” citizen? Dworkin and Wachs head to the newsstand for this study, examining ten years worth of men’s and women’s health and fitness magazines to determine the ways in which bodies are “made” in today’s culture. They dissect the images, the workouts, and the ideology being sold, as well as the contemporary links among health, morality, citizenship, and identity that can be read on these pages. While women and body image are often studied together, Body Panic considers both women’s and men’s bodies side-by-side and over time in order to offer a more in-depth understanding of this pervasive cultural trend.",
+            "industryIdentifiers": [
+                {
+                    "type": "ISBN_10",
+                    "identifier": "0814720749"
+                },
+                {
+                    "type": "ISBN_13",
+                    "identifier": "9780814720745"
+                }
+            ],
+            "readingModes": {
+                "text": true,
+                "image": false
+            },
+            "pageCount": 238,
+            "printType": "BOOK",
+            "categories": [
+                "Social Science"
+            ],
+            "maturityRating": "NOT_MATURE",
+            "allowAnonLogging": true,
+            "contentVersion": "0.7.5.0.preview.2",
+            "panelizationSummary": {
+                "containsEpubBubbles": false,
+                "containsImageBubbles": false
+            },
+            "imageLinks": {
+                "smallThumbnail": "http://books.google.com/books/content?id=5c_C6kcnApoC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+                "thumbnail": "http://books.google.com/books/content?id=5c_C6kcnApoC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+            },
+            "language": "en",
+            "previewLink": "http://books.google.com/books?id=5c_C6kcnApoC&printsec=frontcover&dq=fitness&hl=&cd=20&source=gbs_api",
+            "infoLink": "https://play.google.com/store/books/details?id=5c_C6kcnApoC&source=gbs_api",
+            "canonicalVolumeLink": "https://market.android.com/details?id=book-5c_C6kcnApoC",
+            "id": "5c_C6kcnApoC"
+        }
+    ]
+}
