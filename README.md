@@ -2,15 +2,19 @@
 
 # What is this?
 
-This project is inspired by Goodreads and other sites like it. It allows users to place books on virtual bookshelves; move those books from shelf to shelf; and search for and add new books. 
+This applicaiton is inspired by Goodreads and other sites like it. It allows users to place books on virtual bookshelves; move those books from shelf to shelf; and search for and add new books. 
 
 The app uses React and for now, only implements a front end with a limited selection of books and possible search terms. The list of search terms can be found in SEARCH_TERMS.md
 
 This project was created to fulfill a requirement in Udacity's Front-End Web Development Nanodegree program.
 
+# How to Install and Launch the Application
+
+The application can be installed with 'npm install' and launched with 'npm start'.
+
 # Development Notes
 
-# React Component Tree
+## React Component Tree
 
 index.js
 |
