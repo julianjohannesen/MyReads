@@ -26,7 +26,6 @@ export default class ShelfChanger extends Component {
     ]
     
     handleSelectChange = (e) => {
-        console.log(e.target.tagName);
         if(e.target.tagName === "SELECT"){
             // set the state of whichSelected, which, because it's the value of the select attribute, will set the matching option to "selected"
             this.setState({whichSelected: e.target.value});

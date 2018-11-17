@@ -397,7 +397,6 @@ class BooksApp extends React.Component {
     }
 
     moveBook = (newShelf, oldShelf, theBook) => {
-        console.log("App.moveBook(): The arguments are: ", newShelf, oldShelf, theBook);
         // If the old shelf is not the search page or the new shelf (you can't move a book from its own shelf to its own shelf), then use filter() to filter out the book we're moving and re-set the state of the old shelf
         if (oldShelf !== "search" && oldShelf !== newShelf) {
             this.setState(
@@ -408,12 +407,10 @@ class BooksApp extends React.Component {
         }
         // If the new shelf is not "none" and is not the old shelf (you can't move a book from its own shelf to its own shelf), then, in an immediately invoked function,  use push to push the book we're moving onto the new shelf and then return the new shelf, so that we can re-set its state. I used the IIF because I wanted to make sure that when I returned the new shelf, it included the newly added book and I wasn't sure if it would otherwise.
         
-        // Right now I'm a bit confused by the way that React would like to handle selected options. What you're supposed to do is create a state that represents the selected state for the options, and then you set the select elements value attribute to whatever that state is. The onchange event triggers the change in state. I think I can do that in the shelf changer component and it will have no effect on this method
         if (newShelf !== "none" && newShelf !== oldShelf) {
             this.setState(
                 {
                     [newShelf]: (() => {
-                        console.log("From inside setState in moveBook, this.state[newShelf] is ", this.state[newShelf])
                         this.state[newShelf].push(theBook);
                         return this.state[newShelf];
                         })(),

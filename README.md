@@ -12,6 +12,10 @@ This project was created to fulfill a requirement in Udacity's Front-End Web Dev
 
 The application can be installed with 'npm install' and launched with 'npm start'.
 
+You can see it in action here:
+
+https://julianjohannesen.github.io/myreads/
+
 # Development Notes
 
 ## React Component Tree

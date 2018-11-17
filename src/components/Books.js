@@ -5,10 +5,8 @@ export default class Books extends Component {
 
 	renderBooks = () => {
 		const books = this.props.showingBooks;
-		console.log("From Books.renderBoosk(), make sure that this.props.showingBooks is actually an array. ", Array.isArray(books));
 		if(Array.isArray(books) && books.length > 0) {
 			return books.map( (book, index) => {
-				//console.log('The book is', book, ' and the index is ', index);
 				return (
 					<Book 
 						key={index} 
@@ -19,7 +17,6 @@ export default class Books extends Component {
 				)
 			});
 		} else if(typeof books === "string") {
-			console.log(books);
 			return (<li><h2>{books}</h2></li>)
 		}
 	}
