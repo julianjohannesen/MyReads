@@ -5,8 +5,10 @@ export default class Books extends Component {
 
 	renderBooks = () => {
 		const books = this.props.showingBooks;
-		if(Array.isArray(books) && books.length > 0) {
-			return books.map( (book, index) => {
+		books.then(r => {
+			// if(Array.isArray(r) && r.length > 0) {
+			return r.map( (book, index) => {
+				console.log("From the Books component, each book is ", book)
 				return (
 					<Book 
 						key={index} 
@@ -15,10 +17,12 @@ export default class Books extends Component {
 						cb={this.props.cb} 
 					/>	
 				)
-			});
-		} else if(typeof books === "string") {
-			return (<li><h2>{books}</h2></li>)
-		}
+			}
+			);
+		// } else if(typeof books === "string") {
+		// 	return (<li><h2>{books}</h2></li>)
+		// }
+		})
 	}
 	
 	render() {

@@ -6,6 +6,7 @@ export default class Book extends Component {
 
     render() {
         const book = this.props.theBook;
+        console.log("From the Book component, book is ", this.props.theBook);
         const bookCover = () => {
             if(book.imageLinks && book.imageLinks.thumbnail) {
                 return {
@@ -27,6 +28,7 @@ export default class Book extends Component {
         }
         return (
             <li>
+            {console.log("From the Book component, book is ", this.props.theBook)}
                 <div className="book">
 
                     <div className="book-top">
@@ -48,7 +50,6 @@ export default class Book extends Component {
 
                 </div>
             </li>
-
         )
     }
 }

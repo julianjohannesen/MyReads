@@ -8,7 +8,7 @@ export default class ListBooks extends Component {
 
         return (
             <div className="list-books">
-
+            {console.log("This is the ListBooks component. this.props.library is ", this.props.library)}
                 <div className="list-books-title">
                     <h1>MyReads</h1>
                 </div>
@@ -16,17 +16,17 @@ export default class ListBooks extends Component {
                 <div className="list-books-content">
                     <Bookshelf
                         theShelf={"currentlyReading"}
-                        bookList={this.props.library.currentlyReading}
+                        bookList={this.props.library.then(r=>r.filter(v=>v.shelf === "currentlyReading"))}
                         bookshelfTitle={"Currently Reading"}
                         cb={this.props.cb} />
                     <Bookshelf
                         theShelf={"wantToRead"}
-                        bookList={this.props.library.wantToRead}
+                        bookList={this.props.library.then(r=>r.filter(v=>v.shelf === "wantToRead"))}
                         bookshelfTitle={"Want to Read"}
                         cb={this.props.cb} />
                     <Bookshelf
                         theShelf={"read"}
-                        bookList={this.props.library.read}
+                        bookList={this.props.library.then(r=>r.filter(v=>v.shelf === "read"))}
                         bookshelfTitle={"Read"}
                         cb={this.props.cb} />
                 </div>
