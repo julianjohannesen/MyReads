@@ -1,6 +1,6 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-import { getAll } from "./BooksAPI"
+import { getAll, get } from "./BooksAPI"
 import Search from "./components/Search";
 import ListBooks from "./components/ListBooks";
 import "./App.css";
@@ -8,8 +8,12 @@ import "./App.css";
 class BooksApp extends React.Component {
 
     // sample data
-    state = getAll();
-
+    state = {
+        currentlyReading: getAll(),
+        wantToRead: getAll(),
+        read: getAll()
+    }
+    
     moveBook = (newShelf, oldShelf, theBook) => {
         // If the old shelf is not the search page or the new shelf (you can't move a book from its own shelf to its own shelf), then use filter() to filter out the book we're moving and re-set the state of the old shelf
         if (oldShelf !== "search" && oldShelf !== newShelf) {
