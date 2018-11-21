@@ -4,6 +4,7 @@ import Books from './Books.js';
 
 export default class ListBooks extends Component {
 
+    // Does using this shelf array cause a problem because I don't have "none" or "search" here?
     shelves = [
         {
             shelf: "currentlyReading",
@@ -19,7 +20,9 @@ export default class ListBooks extends Component {
         }
     ]
 
-    renderShelves = () => {
+    // generateShelves is called below and will iterate over my shelves array to create my three shelves, in process calling the Books component and passing along the shelf id, the books on that shelf, and my callback function moveBooks.
+    generateShelves = () => {
+        // Iterate over my shelves array to create each shelf
         return this.shelves.map((shelf, index) => (
             <div className="bookshelf" key={index}>
                 {console.log("In ListBooks.js this.props is: ", this.props)}
@@ -42,7 +45,7 @@ export default class ListBooks extends Component {
                 </div>
 
                 <div className="list-books-content">
-                    {this.renderShelves()}
+                    {this.generateShelves()}
                 </div>
 
                 <div className="open-search">

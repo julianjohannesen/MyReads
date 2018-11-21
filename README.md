@@ -26,66 +26,40 @@ App.js
 |
 Search.js ----- ListBooks.js
 |               |
-Books.js        BookShelf.js
+Books.js        Books.js
 |               |
-Book.js         Books.js
-|               |
-ShelfChanger    Book.js
-                |
-                ShelfChanger
+ShelfChanger    ShelfChanger
 
 
-## The following is a running list of questions of the form "Why am I getting this buggy behavior?" followed by a brief explanation of the fix.
+## The following is a list of just a few of the issues that cropped up during development.
 
-## Why am I getting the "use value on select" warning
+## Why was I getting the "use value on select" warning
 
-So what I was doing before I fixed this was telling the shelf generator that if the shelf id on this iteration is the same as the id of the old shelf for this book, then add the "selected" attribute to this shelf. But that's not the preferred way to handle selected options in React. What you're supposed to do is create a state to represent the selected state of the options and then change that state with setState whenever the onChange event fires. So, I did that and it worked.
-
-This is the check I was using before fixing the problem. I didn't need it after fixing the problem:
-
-```js
-if(shelf.shelf === this.props.oldShelf) {
-   return (<option key={index} value={shelf.shelf} selected >{shelf.title}</option>);
-}
-```
-
-## Why isn't anything displaying on the search page. 
-
-The fetch is returning the search for books. And as far as I can tell, everything is working well. I'm not getting any errors. The books just aren't showing up. Instead, I'm getting the one empty book that is the default.
-
-Figured it out.  I was missing a return statement in a function, which is why nothing was showing. 
-
-I also figured out how to show a "Query Term Not Found" message. And how to show a default image if there's no cover image for a book.
+So what I was doing before I fixed this was telling the shelf generator that if the shelf id on the option element currently being generated is the same as the id of the old shelf for this book, then add the "selected" attribute to this option. But that's not the preferred way to handle selected options in React. What you're supposed to do is use the select element's value attribute to indicate which option is selected by default. So I did that and I created a state to represent the selected state of the options, changing that state with setState whenever the onChange event fires. 
 
 ## Why am I getting a mime type error on my service worker. 
 
-
+This was a problem I spent a while on, but using Create React Apps default service worker corrected the problem
 
 ## At what point do you actually fetch the books?
 
-At the time that Search is called. 
+At first I didn't realize that I needed to use getAll to set the state of my shelves in App.js. I was using a static array of books and then moving books from shelf to shelf and from search to the homepage by setting state. The only time I was accessing the API was when executing a search. 
+
+The problem with that approach is that changes to the shelves don't persist on page refresh! So, I started using getAll to load my books initially and started calling update() in my moveBook function.
 
 ## How do you get each shelf of books? 
 
-Add a state object to ListBooks with entries for current, wantToRead, and read. Each of those entries is an array of book objects, or maybe book IDs. 
+At first I couldn't figure out how to sort the books to their various shelves. I wasn't using getAll() to fetch the books and I didn't even realize that each book has a shelf property. I was using a static array of books. Eventually, I figured out that you need to add a state object to App.js (in App.js specifically so that it can be passed down to both ListBooks and Search) with keys for current, wantToRead, and read. Each of those keys has a value provided by getAll(). 
 
-Those arrays are then passed first from ListBooks to BookShelf (as this.state.current, etc.), then from BookShelf to Books as "showingBooks" (as this.props.bookList), and then from Books to Book as "book" (as just book).
+Those arrays are then passed first from App.js to either ListBooks or Search and then on to Books. 
 
-I've done all of that and it works. 
+I think that what I'm doing right now is passing the whole library along rather than an individual shelf. Need to look at that more.
 
 ## How will the books move from shelf to shelf?
 
-This is going to involve a callback function and setState(). But where does the call to the callback function go? It goes in the select element in ShelfChanger, e.g.
+I knew this was going to involve a callback function and setState(). But I didn't know where to put the call to the callback function or how to pass down the callback function. I eventually figured out that the callback fires on change to the select element in ShelfChanger, e.g.
 
-```jsx
-// a bunch of code
-(< select onChange={callback} >
-{/* more code */}
-)
-```
-But the callback has to be defined in the same place that the state is set. Or at least, that's my understanding. 
-
-This took a long time to solve. At first I attempted to import the callback function into ShelfChanger, but it turns out that you have to pass it down as a prop from component to subcomponent, starting up in ListBooks and ending in ShelfChanger. 
+But the callback has to be defined in the same place that the state is set and then passed down to whatever is calling it. That took a long time to figure out. My first instinct was to import the callback function into ShelfChanger. 
 
 ## How do you use the callback function to add and remove books from the state?
 
@@ -131,10 +105,5 @@ I needed to import Route and Switch into App.js and then add a *Switch* statemen
 </Switch>
 ```
 
-In the template, the books are just hard coded into the JSX in App.js. I moved that hard coding to a component called ListBooks. 
-
-The shelves and the books that appear on those shelves are all just hard coded. I need to figure out how to use the BooksAPI to fetch all of those books and display them correctly.
-
-To do think that I think I'll need components both for Books and for Shelves. Definitely for Books.
 
 
