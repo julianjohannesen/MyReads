@@ -17,31 +17,35 @@ class BooksApp extends React.Component {
     }
 
     // I couldn't figure out how to call getAll(), so I created a dummy variable. 
-    nothingAtAll = getAll().then(r => this.setState({currentlyReading: r, wantToRead: r, read: r, none: r }))
+    getAllBooks = getAll().then(r => this.setState({currentlyReading: r, wantToRead: r, read: r, none: r }))
 
     // moveBook is called when the submit event fires in the shelfChanger component. It will update the DB, and move the book and re-render the shelves.
     moveBook = (newShelf, oldShelf, theBook) => {
 
-        // updateShelfState will push the book to the new shelf and then return the new shelf 
-        const updateShelfState = () => {
-            // Add the book to the new shelf
-            this.state[newShelf].push(theBook);
-            // Return the shelf with the new book
-            return this.state[newShelf];
-        }
+        // This was part of an experiment to avoid having to call getAll() each time a book is moved. I know it's doable but it was taking me forever to figure out how to do it.
 
-        // Remove the book from its old shelf and add it to it's new shelf
-        this.setState(
-            { 
-                // Remove the book from its old shelf
-                [oldShelf]: this.state[oldShelf].filter(v => v !== theBook),
-                // Call updateShelfState to add the book to the new shelf
-                [newShelf]: updateShelfState() 
-            }
-        );
+        // // updateShelfState will push the book to the new shelf and then return the new shelf 
+        // const updateShelfState = () => {
+        //     // Add the book to the new shelf
+        //     this.state[newShelf].push(theBook);
+        //     // Return the shelf with the new book
+        //     return this.state[newShelf];
+        // }
 
-        // Update the db, but avoid any other requests. On page refresh, the books that appear will be called from the DB with their proper shelves
+        // // Remove the book from its old shelf and add it to it's new shelf
+        // this.setState(
+        //     { 
+        //         // Remove the book from its old shelf
+        //         [oldShelf]: this.state[oldShelf].filter(v => v !== theBook),
+        //         // Call updateShelfState to add the book to the new shelf
+        //         [newShelf]: updateShelfState() 
+        //     }
+        // );
+
+        // Update the db
         update(theBook, newShelf);
+        // Re-fetch to render now arrangement
+        getAll().then(r => this.setState({currentlyReading: r, wantToRead: r, read: r, none: r }))
     }
 
     render() {
