@@ -16,8 +16,10 @@ export default class Search extends Component {
 
 	handleSubmit = (e) => {
 		e.preventDefault();
-		if(this.searchTerms.includes(this.state.query.toLowerCase())) {
-			search(this.state.query).then(result => {
+		// for each search term in my list, look at it and see if it starts with the query string, if it does, then use that search term from the list (not from the query) to do a search
+		const termFromList = this.searchTerms.find(v => v.match(this.state.query.toLowerCase()))
+		if(termFromList) {
+			search(termFromList).then(result => {
 				this.setState({showingBooks: result});
 			});
 		} else {
@@ -40,6 +42,7 @@ export default class Search extends Component {
 						<label htmlFor="book-search" className="visually-hidden">
 							Book Search
 						</label>
+						
 						<input
 							name="book-search"
 							onChange={this.handleQuery}
@@ -55,14 +58,14 @@ export default class Search extends Component {
 						/>
 					</form>
 				</div>
-				<div className="search-books-results">
-					<Books 
-						cb={this.props.cb}
-						showingBooks={this.state.showingBooks}
-						theShelf="search" 
-					/>
+				<ul className="search-books-results books-grid">
+					
+					{console.log("In Search, showingBooks is: ", this.state.showingBooks)}
+					<Books shelf="search" library={this.state.showingBooks} cb={this.props.cb}  />
+				
+				</ul>
 				</div>
-			</div>
-		);	
-	}
-}
+				);	
+			}
+		}
+		

@@ -3,7 +3,6 @@ import Books from './Books';
 
 export default class Bookshelf extends Component {
   render() {
-    // Below, bookshelfTitle is passed into Bookshelf by ListBooks. It's just a string. I should be using it as a query parameter and passing that query parameter to Books.
     return (
         <div className="bookshelf">
         {console.log("This is the Bookshelf component. Props is ", this.props, "\n and this.props.bookList is ", this.props.bookList)}

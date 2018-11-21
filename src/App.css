@@ -112,7 +112,7 @@ input[type="submit"] {
 .books-grid {
   list-style-type: none;
   padding: 0;
-  margin: 0;
+  margin: 3em 0 0 0;
 
   display: flex;
   justify-content: center;
@@ -124,7 +124,7 @@ input[type="submit"] {
 }
 
 .book {
-  width: 140px;
+  width: 158px;
 }
 .book-title,
 .book-authors {
