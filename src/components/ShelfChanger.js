@@ -29,7 +29,7 @@ export default class ShelfChanger extends Component {
         if(e.target.tagName === "SELECT"){
             // set the state of whichSelected, which, because it's the value of the select attribute, will set the matching option to "selected"
             this.setState({whichSelected: e.target.value});
-            // then call moveBook (which is in this.props.cb) and pass in the current shelf, old shelf, and book object
+            // then call moveBook (which is in this.props.cb) and pass in the new shelf, old shelf, and book object
             return this.props.cb(e.target.value, this.props.oldShelf, this.props.theBook);
         }
     }
@@ -47,8 +47,8 @@ export default class ShelfChanger extends Component {
             <div className="book-shelf-changer">
                 {/* When the user _commits_ a change to the select element's value, the onchange event fires.  */}
                 <select value={this.state.whichSelected} onChange={this.handleSelectChange} >
-                <option value="">Move To...</option>
-                {this.generateShelves()}
+                    <option value="">Move To...</option>
+                    {this.generateShelves()}
                 </select>
             </div>
         )

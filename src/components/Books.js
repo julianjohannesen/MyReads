@@ -10,7 +10,7 @@ export default class Books extends Component {
 		let componentArray;
 		const bookArray = this.props.library;
 		if(Array.isArray(bookArray) && bookArray.length > 0) {
-			{console.log("Now I'm in Books.js. Should be just one shelf: ", this.props.library)}
+			console.log("Now I'm in Books.js. Should be just one shelf: ", this.props.library);
 
 			componentArray = bookArray
 				.filter(v => v.shelf === this.props.shelf || this.props.shelf === "search")
@@ -37,29 +37,30 @@ export default class Books extends Component {
 					return (
 						<li key={index} className="book">
 						
-						<div className="book-top">
-						<div className="book-cover" style={bookCover()} />
-						<ShelfChanger
-						cb={this.props.cb}
-						oldShelf={this.props.shelf}
-						theBook={book.id}
-						/>
-						</div>
-						
-						<div className="book-title">
-						{book.title || ""}
-						</div>
-						
-						<div className="book-authors">
-						{(book.authors && book.authors.join(", ")) || ""}
-						</div>
+							<div className="book-top">
+							<div className="book-cover" style={bookCover()} />
+							<ShelfChanger 
+								key={index}
+								cb={this.props.cb}
+								oldShelf={this.props.shelf}
+								theBook={book}
+							/>
+							</div>
+							
+							<div className="book-title">
+							{book.title || ""}
+							</div>
+							
+							<div className="book-authors">
+							{(book.authors && book.authors.join(", ")) || ""}
+							</div>
 						</li>
 						)
 					}
 					)
 			return componentArray;
 		}
-		return componentArray = ["Query returned no results"] 
+		return componentArray = [(<h1>Query returned no results.</h1>)] 
 			
 	}
 			render(){return this.renderBooks()}

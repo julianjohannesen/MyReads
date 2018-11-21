@@ -22,9 +22,7 @@ export default class Search extends Component {
 			search(termFromList).then(result => {
 				this.setState({showingBooks: result});
 			});
-		} else {
-			this.setState({showingBooks: "Query Term Not Found"});
-		}
+		} 
 	}
 
 
@@ -58,14 +56,11 @@ export default class Search extends Component {
 						/>
 					</form>
 				</div>
-				<ul className="search-books-results books-grid">
-					
-					{console.log("In Search, showingBooks is: ", this.state.showingBooks)}
+				<ul className="search-books-results books-grid">	
 					<Books shelf="search" library={this.state.showingBooks} cb={this.props.cb}  />
-				
 				</ul>
-				</div>
-				);	
-			}
-		}
+			</div>
+		);	
+	}
+}
 		
