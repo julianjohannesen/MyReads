@@ -62,9 +62,13 @@ export default class Books extends Component {
 					)
 			// Finally return the array of jsx blocks
 			return componentArray;
-		}
-		// If bookArray is not an array, or is an array but is empty then show the message below
-		return componentArray = [(<h1>Query returned no results.</h1>)] 
+		} else if(Array.isArray(bookArray) && bookArray.length === 0) {
+			if(this.props.queryFlag){
+				return componentArray = [(<h1>Search term not recognized.</h1>)]
+			} else {
+				return componentArray = [(<h1>Search to find and add books to your shelves.</h1>)];
+			}
+		} 
 	}
 	render(){return this.generateBooks()}
 }

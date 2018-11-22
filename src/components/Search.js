@@ -9,6 +9,7 @@ export default class Search extends Component {
 
 	state = {
 		query: "",
+		queryFailed: false,
 		showingBooks: []
 	};
 
@@ -16,13 +17,18 @@ export default class Search extends Component {
 
 	handleSubmit = (e) => {
 		e.preventDefault();
-		// for each search term in my list, look at it and see if it starts with the query string, if it does, then use that search term from the list (not from the query) to do a search
+		// For each search term in my list, look at it and see if it contains the query string, if it does, then use that search term from the list (not from the query) to do a search
 		const termFromList = this.searchTerms.find(v => v.match(this.state.query.toLowerCase()))
 		if(termFromList) {
+			// Search for books using the query term from the approved list and set the state of showingBooks to the result
 			search(termFromList).then(result => {
 				this.setState({showingBooks: result});
 			});
+		} else {
+			// Or if the user's query cannot be found in the approved list, set the state of showingBooks to an empty array (to clear any previous searches results) and set queryFlag to true
+			this.setState({showingBooks: [], queryFailed: true});
 		} 
+
 	}
 
 
@@ -57,7 +63,7 @@ export default class Search extends Component {
 					</form>
 				</div>
 				<ul className="search-books-results books-grid">	
-					<Books shelf="search" library={this.state.showingBooks} cb={this.props.cb}  />
+					<Books queryFlag={this.state.queryFailed} shelf="search" library={this.state.showingBooks} cb={this.props.cb}  />
 				</ul>
 			</div>
 		);	
