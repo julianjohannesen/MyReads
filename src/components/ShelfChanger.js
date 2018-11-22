@@ -53,7 +53,7 @@ export default class ShelfChanger extends Component {
             <div className="book-shelf-changer">
                 {/* In React, the default selected option is set by setting the select element's value to the value of the selected option. When the user _commits_ a change to the select element's value, the onchange event fires.  An apparent bug on Windows is that in Chrome and Firefox at least, once an option is selected with the up or down arrows keys, clicking _anywhere_ on the page will commit the change. */}
                 <select value={this.state.whichSelected} onChange={this.handleSelectChange} >
-                    <option value="">Move To...</option>
+                    <option value="" disabled>Move To...</option>
                     {this.generateShelves()}
                 </select>
             </div>
