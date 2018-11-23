@@ -39,5 +39,10 @@
   "contributors": [
     "none"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "quokka": {
+    "babel": {
+        "presets": ["react-app"]
+    }
+  }
 }

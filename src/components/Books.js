@@ -37,12 +37,12 @@ export default class Books extends Component {
 						}
 					}
 					return (
-						<li key={index} className="book">
+						<li key={"book-li-" + index} className="book">
 						
 							<div className="book-top">
 							<div className="book-cover" style={bookCover()} />
 							<ShelfChanger 
-								key={index}
+								key={"shelfChanger-" + index}
 								cb={this.props.cb}
 								oldShelf={this.props.shelf}
 								theBook={book}

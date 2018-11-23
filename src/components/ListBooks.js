@@ -24,13 +24,11 @@ export default class ListBooks extends Component {
     generateShelves = () => {
         // Iterate over my shelves array to create each shelf
         return this.shelves.map((shelf, index) => (
-            <div className="bookshelf" key={index}>
-                {console.log("In ListBooks.js this.props is: ", this.props)}
+            <div className="bookshelf" key={"shelf-div-" + index}>
                 <h2 className="bookshelf-title">{shelf.title}</h2>
                 <div className="bookshelf-books">
                     <ol className="books-grid">
-                        <Books shelf={shelf.shelf} library={this.props.library[shelf.shelf]} cb={this.props.cb} />
-                        {console.log("Should be just one shelf: ", this.props.library[shelf.shelf])}
+                        <Books key={shelf.shelf + "-" + index} shelf={shelf.shelf} library={this.props.library[shelf.shelf]} cb={this.props.cb} />
                     </ol>
                 </div>
             </div>
