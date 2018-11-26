@@ -6,6 +6,7 @@
   "dependencies": {
     "escape-string-regexp": "^1.0.5",
     "form-serialize": "^0.7.2",
+    "shortid": "^2.2.14",
     "sort-by": "^1.2.0"
   },
   "devDependencies": {
@@ -42,7 +43,9 @@
   "license": "MIT",
   "quokka": {
     "babel": {
-        "presets": ["react-app"]
+      "presets": [
+        "react-app"
+      ]
     }
   }
 }

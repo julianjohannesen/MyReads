@@ -1,49 +1,60 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { generate } from 'shortid';
 import Books from './Books.js';
 
 export default class ListBooks extends Component {
-
-    // Does using this shelf array cause a problem because I don't have "none" or "search" here?
-    shelves = [
-        {
-            shelf: "currentlyReading",
-            title: "Currently Reading"
-        },
-        {
-            shelf: "wantToRead",
-            title: "Want to Read"
-        },
-        {
-            shelf: "read",
-            title: "Read"
-        }
-    ]
-
-    // generateShelves is called below and will iterate over my shelves array to create my three shelves, in process calling the Books component and passing along the shelf id, the books on that shelf, and my callback function moveBooks.
-    generateShelves = () => {
-        // Iterate over my shelves array to create each shelf
-        return this.shelves.map((shelf, index) => (
-            <div className="bookshelf" key={"shelf-div-" + index}>
-                <h2 className="bookshelf-title">{shelf.title}</h2>
-                <div className="bookshelf-books">
-                    <ol className="books-grid">
-                        <Books key={shelf.shelf + "-" + index} shelf={shelf.shelf} library={this.props.library[shelf.shelf]} cb={this.props.cb} />
-                    </ol>
-                </div>
-            </div>
-    ))};
-
+    // I considered generating the shelves programmatically, but decided it just added unnecessary complexity.
+    // I use shortid to generate a key for each call to Books.js
     render() {
         return (
             <div className="list-books">
+            {console.log("Props: ", this.props.library.currentlyReading)}
 
                 <div className="list-books-title">
                     <h1>MyReads</h1>
                 </div>
 
                 <div className="list-books-content">
-                    {this.generateShelves()}
+
+                    <div className="bookshelf">
+                        <h2 className="bookshelf-title">Currently Reading</h2>
+                        <div className="bookshelf-books">
+                            <ol className="books-grid">
+                                <Books
+                                    cb={this.props.cb}
+                                    key={generate()}
+                                    shelfBooks={this.props.library.currentlyReading}
+                                />
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div className="bookshelf">
+                        <h2 className="bookshelf-title">Want to Read</h2>
+                        <div className="bookshelf-books">
+                            <ol className="books-grid">
+                                <Books 
+                                    cb={this.props.cb}
+                                    key={generate()} 
+                                    shelfBooks={this.props.library.wantToRead} 
+                                />
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div className="bookshelf">
+                        <h2 className="bookshelf-title">Read</h2>
+                        <div className="bookshelf-books">
+                            <ol className="books-grid">
+                                <Books 
+                                    cb={this.props.cb} 
+                                    key={generate()} 
+                                    shelfBooks={this.props.library.read} 
+                                />
+                            </ol>
+                        </div>
+                    </div>
                 </div>
 
                 <div className="open-search">

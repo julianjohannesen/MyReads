@@ -1,75 +1,51 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
+import { generate } from 'shortid';
 import ShelfChanger from './ShelfChanger';
-import noImage from '../icons/no-image-icon-4.gif'
+import noImage from '../icons/no-image.gif'
 
 export default class Books extends Component {
 
-	generateBooks = () => {
-		// Just spelling things out a bit more by using this holder
-		let componentArray;
-		// A holder for the books passed in by either ListBooks or Search
-		const bookArray = this.props.library;
-		// If bookArray is actually an array with members...
-		if(Array.isArray(bookArray) && bookArray.length > 0) {
-			componentArray = bookArray
-				// ... then filter bookArray to find any book that has the right shelf property or any book whose shelf is "search"
-				.filter(v => v.shelf === this.props.shelf || this.props.shelf === "search")
-				// then map the resulting filtered array and return a new array of jsx blocks for each book, in the process calling ShelfChanger
-				.map((book, index) => {
-					// bookCover will handle books that don't have a cover image by substituting a default image
-					const bookCover = () => {
-						if (book.imageLinks && book.imageLinks.thumbnail) {
-							return {
-								backgroundImage: `url(${book.imageLinks.thumbnail})`,
-								backgroundRepeat: 'no-repeat',
-								backgroundColor: '#ffffff',
-								width: '158px',
-								height: '181px'
-							}
-						} else {
-							return {
-								backgroundImage: `url(${noImage})`,
-								backgroundRepeat: 'no-repeat',
-								backgroundColor: '#ffffff',
-								width: '158px',
-								height: '181px'
-							}
-						}
-					}
-					return (
-						<li key={"book-li-" + index} className="book">
-						
-							<div className="book-top">
-							<div className="book-cover" style={bookCover()} />
-							<ShelfChanger 
-								key={"shelfChanger-" + index}
-								cb={this.props.cb}
-								oldShelf={this.props.shelf}
-								theBook={book}
-							/>
-							</div>
-							
-							<div className="book-title">
-							{book.title || ""}
-							</div>
-							
-							<div className="book-authors">
-							{(book.authors && book.authors.join(", ")) || ""}
-							</div>
-						</li>
-						)
-					}
-					)
-			// Finally return the array of jsx blocks
-			return componentArray;
-		} else if(Array.isArray(bookArray) && bookArray.length === 0) {
-			if(this.props.queryFlag){
-				return componentArray = [(<h1>Search term not recognized.</h1>)]
-			} else {
-				return componentArray = [(<h1>Search to find and add books to your shelves.</h1>)];
-			}
-		} 
+	// Things to take care of:
+	// What if library isn't an array?
+	// What if this shelf is empty? (i.e. an empty array)
+
+	render(){
+		const shelfBooks = this.props.shelfBooks;
+		return Array.isArray(shelfBooks) && shelfBooks.length > 0 
+		? 
+		shelfBooks.map(book => (
+			<li key={generate()} className="book">
+			
+				<div className="book-top">
+				<div 
+					className="book-cover" 
+					style={{
+						backgroundImage: book.imageLinks && book.imageLinks.thumbnail ? `url(${book.imageLinks.thumbnail})` : `url(${noImage})`,
+						backgroundRepeat: 'no-repeat',
+						backgroundColor: '#ffffff',
+						width: '158px',
+						height: '181px'
+					}} 
+				/>
+				<ShelfChanger 
+					cb={this.props.cb}
+					key={generate()}
+					booksCurrentShelf={book.shelf}
+					theBook={book}
+				/>
+				</div>
+				
+				<div className="book-title">
+					{book.title || ""}
+				</div>
+				
+				<div className="book-authors">
+					{(book.authors && book.authors.join(", ")) || ""}
+				</div>
+			</li>
+		)) 
+		:
+		null
 	}
-	render(){return this.generateBooks()}
 }
 		
