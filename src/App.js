@@ -8,12 +8,11 @@ import "./App.css";
 
 class BooksApp extends React.Component {
 
-    // I create a state for each "shelf" including "none" and "search" but ListBooks will only ever display the first three shelves.
+    // I create a state for each "shelf".
     state = {
         currentlyReading: [],
         wantToRead: [],
         read: [],
-        none: [],
     }
 
     // shelveBooks will take the response from getAll and shelve the books on their appropriate shelf
@@ -31,7 +30,6 @@ class BooksApp extends React.Component {
             currentlyReading: current,
             wantToRead: want,
             read: read,
-            //none: none
         });
     }
 

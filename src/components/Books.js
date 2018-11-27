@@ -5,10 +5,6 @@ import noImage from '../icons/no-image.gif'
 
 export default class Books extends Component {
 
-	// Things to take care of:
-	// What if library isn't an array?
-	// What if this shelf is empty? (i.e. an empty array)
-
 	render(){
 		const shelfBooks = this.props.shelfBooks;
 		return Array.isArray(shelfBooks) && shelfBooks.length > 0 

@@ -36,11 +36,9 @@ export default class Search extends Component {
 					const library = [].concat.apply([], Object.values(this.props.library))
 					// For each book in the library, see if that library book's ID matches the ID of the book from the search results that we're looking at right now. If so, set the shelf of the searched book to the library book's shelf.
 					library.forEach(book => foundBook.id === book.id ? foundBook.shelf = book.shelf : !foundBook.shelf ? foundBook.shelf = "none" : null );
-					console.log("The found books stats: ", foundBook.id, foundBook.shelf)
 					// Return the searched for book with the possible new shelf property.
 					return foundBook;
 				});
-				console.log("resultWithShelf is: ", resultWithShelf)
 				this.setState({showingBooks: resultWithShelf});
 				});
 		} else {
