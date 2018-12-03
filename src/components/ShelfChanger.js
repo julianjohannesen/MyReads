@@ -9,7 +9,7 @@ export default class ShelfChanger extends Component {
         return (
             <div className="book-shelf-changer">
                 <select 
-                    value={this.props.booksCurrentShelf} 
+                    defaultValue={this.props.booksCurrentShelf} 
                     onChange={this.handleSelectChange} 
                 >
                     <option value="" disabled>Move To...</option>

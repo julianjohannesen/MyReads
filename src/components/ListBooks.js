@@ -9,7 +9,6 @@ export default class ListBooks extends Component {
     render() {
         return (
             <div className="list-books">
-            {console.log("Props: ", this.props.library.currentlyReading)}
 
                 <div className="list-books-title">
                     <h1>MyReads</h1>

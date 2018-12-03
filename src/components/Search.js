@@ -1,85 +1,153 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { generate } from 'shortid';
+import DebounceInput from 'react-debounce-input'
 import Books from "./Books";
 import { search } from "../BooksAPI";
 
 export default class Search extends Component {
 
-	searchTerms = ['android', 'art', 'artificial intelligence', 'astronomy', 'austen', 'baseball', 'basketball', 'bhagat', 'biography', 'brief', 'business', 'camus', 'cervantes', 'christie', 'classics', 'comics', 'cook', 'cricket', 'cycling', 'desai', 'design', 'development', 'digital marketing', 'drama', 'drawing', 'dumas', 'education', 'everything', 'fantasy', 'film', 'finance', 'first', 'fitness', 'football', 'future', 'games', 'gandhi', 'homer', 'horror', 'hugo', 'ibsen', 'journey', 'kafka', 'king', 'lahiri', 'larsson', 'learn', 'literary fiction', 'make', 'manage', 'marquez', 'money', 'mystery', 'negotiate', 'painting', 'philosophy', 'photography', 'poetry', 'production', 'programming', 'react', 'redux', 'river', 'robotics', 'rowling', 'satire', 'science fiction', 'shakespeare', 'singh', 'swimming', 'tale', 'thrun', 'time', 'tolstoy', 'travel', 'ultimate', 'virtual reality', 'web development', 'iOS'];
+	//Previously, I created a search function that matched against only the approved list of search terms. I decided to create a better search experience for the user by searching for and returning all of the books in the library, and then generating a string containing title, subtitle, author, and category words, then matching against that. I know that in the real world, you'd have to implement a better search on the backend, and that you wouldn't want to be in the position of fetching and searching through a million books or whatever. 
 
+	// On the bright side, because I search for and return everything, I only need to make one API call and then filter the results for the search. It's a little bit slow, but adding debounce helped quite a bit.
+
+	// PROBLEM: I'm somtimes getting duplicate books in my search view.
+	// PROBLEM: Multi-word search for terms that are contained in the same search string aren't working. Eg if I enter "Stephen" and "Bio" I should get the biography of Stephen Hawking, but I do not.
+
+
+	//A greeting or error message for visitors
 	messages = {
-		greeting:(<h1 style={{"margin":"2em","textAlign":"center"}}>Search for Books to Add to Your Shelves</h1>),
-		noMatch:(<h1 style={{"margin":"2em", "textAlign":"center"}}>No match found.</h1>),
+		greeting: (<h1 style={{ "marginTop": "10%", "textAlign": "center" }}>Search for Books to Add to Your Shelves</h1>),
+		noMatch: (<h1 style={{ "marginTop": "10%", "textAlign": "center" }}>The search returned no results.</h1>),
 	}
 
+	// The search terms
+	searchTerms = ['Android', 'Art', 'Artificial Intelligence', 'Astronomy', 'Austen', 'Baseball', 'Basketball', 'Bhagat', 'Biography', 'Brief', 'Business', 'Camus', 'Cervantes', 'Christie', 'Classics', 'Comics', 'Cook', 'Cricket', 'Cycling', 'Desai', 'Design', 'Development', 'Digital Marketing', 'Drama', 'Drawing', 'Dumas', 'Education', 'Everything', 'Fantasy', 'Film', 'Finance', 'First', 'Fitness', 'Football', 'Future', 'Games', 'Gandhi', 'Homer', 'Horror', 'Hugo', 'Ibsen', 'Journey', 'Kafka', 'King', 'Lahiri', 'Larsson', 'Learn', 'Literary Fiction', 'Make', 'Manage', 'Marquez', 'Money', 'Mystery', 'Negotiate', 'Painting', 'Philosophy', 'Photography', 'Poetry', 'Production', 'Programming', 'React', 'Redux', 'River', 'Robotics', 'Rowling', 'Satire', 'Science Fiction', 'Shakespeare', 'Singh', 'Swimming', 'Tale', 'Thrun', 'Time', 'Tolstoy', 'Travel', 'Ultimate', 'Virtual Reality', 'Web Development', 'iOS']
+
+	// States for all books, for messages, and for books currently displayed
 	state = {
+		books: [],
 		message: this.messages.greeting,
 		showingBooks: []
 	}
-	
-	// handleQuery fires on change to the search form input and attempts to find the query term in the approved list of terms. If there isn't a query term or it's undefined, it sets the state of showingBooks to an empty array, otherwise it uses the matched term to search for books matching that term and sets the state of showingBooks to the resulting array.
+
+	// Before we mount
+	componentWillMount = () => {
+		// iterate over the list of search terms to fetch the entire library using BooksAPI.search
+		Promise.all(this.searchTerms.map(term => search(term)))
+			// Then combine all of those returned arrays into one large array
+			.then(result => [].concat.apply([], result), () => new Error("Concat stage failed"))
+			// Then set the state of books to the concatenated array books
+			.then(result => {
+				// on success, map over each book and for that book, and...
+				const withShelves = result.map(book => {
+					//...iterate over our shelved books from this.props.library
+					this.props.library.forEach(shelvedBook => {
+						// If the ids of the two books match, assign book a shelf from the shelved books. Books that aren't yet on a shelf will be assigned "none" in the Books component.
+						if (book.id === shelvedBook.id) {
+							book.shelf = shelvedBook.shelf;
+						}
+					});
+					// Return the shelved book
+					return book;
+				});
+				// Finally set state on books to books with shelves added 
+				this.setState({ books: withShelves })
+			},
+				// on failure
+				() => new Error("Assigning shelves and setting state on books failed")
+			);
+	}
+
+	// handleQuery fires on change to the search form input and attempts to find the query term. If there isn't a query term, it sets the state of showingBooks to an empty array, otherwise it uses the term to filter for books matching that term and sets the state of showingBooks to the resulting array.
 	handleQuery = (e) => {
-		e.preventDefault();
-		// For each search term in my list, look at it and see if it contains the query string, if it does, then use that search term from the list (not from the query) to do a search
-		const termFromList = this.searchTerms.find(v => v.match(e.target.value.toLowerCase()));
-		// First test to see if the user has backspaced to an empty string (ie is the input value not truthy) or if the query term cannot be matched (ie the input the value is truthy, but the search term match is not truthy), in which case clear the showingBooks array and set the message. If the query term exists, then search for the books matching that term, get their shelf value, and set showingBooks to show them.
-		if(!e.target.value) {
-			this.setState({showingBooks: [], message: this.messages.greeting});
-		} else if(e.target.value && !termFromList) {
-			this.setState({showingBooks: [], message: this.messages.noMatch});
-		} else if(e.target.value && termFromList){
-			search(termFromList).then(result => {
-				// Map over the search result array, and for each found book ...
-				const resultWithShelf = result.map(foundBook => {
-					// Flatten this.props.library into an array of book objects 
-					const library = [].concat.apply([], Object.values(this.props.library))
-					// For each book in the library, see if that library book's ID matches the ID of the book from the search results that we're looking at right now. If so, set the shelf of the searched book to the library book's shelf.
-					library.forEach(book => foundBook.id === book.id ? foundBook.shelf = book.shelf : !foundBook.shelf ? foundBook.shelf = "none" : null );
-					// Return the searched for book with the possible new shelf property.
-					return foundBook;
-				});
-				this.setState({showingBooks: resultWithShelf});
-				});
-		} else {
-			new Error();
+		// Get the query string
+		const queryString = e.target.value;
+
+		// Get the query term(s) and store them in an array
+		const queryArray = queryString.match(new RegExp(/(\w+)/, 'ig')) || [];
+
+		// A holder for our filtered books
+		let filteredBooks = [];
+		
+		// searchString builds a string comprised of a book's title, subtitle, author, and category fields
+		const _searchString = (book) =>  `
+			${book.title || ""} 
+			${book.subtitle || ""}  
+			${book.authors && book.authors[0] ? book.authors[0] : ""}  
+			${book.authors && book.authors[1] ? book.authors[1] : ""} 
+			${book.categories && book.categories[0] ? book.categories[0] : ""}  
+			${book.categories && book.categories[1] ? book.categories[1] : ""}`;
+		
+		// filterThem filters a collection of books using a search string comprised of various fields found in each book object and an array of query terms to be matched against that string. It calls itself once for each query term in the array, performing a new filter on the previously filtered results.
+		const _filterThem = (someBooks, aQueryArray) => {
+			console.log(`The query array is: ${aQueryArray}`);
+			console.log("The books are: ", someBooks)
+			if(aQueryArray.length === 0) {
+				console.log("The filtered books are: ", filteredBooks);
+				return filteredBooks;
+			} else {
+				filteredBooks = someBooks.filter(book => {
+					return _searchString(book).match(new RegExp(aQueryArray[0], 'i'));
+				})
+				console.log("The filtered books are: ", filteredBooks);
+				aQueryArray.splice(0,1);
+				_filterThem(filteredBooks, aQueryArray);
+			}
+		}
+
+		// For each query term in the query array, filter the books down to books whose search string contains the query term, performing the filter on smaller and smaller sets of filtered books
+		_filterThem(this.state.books, queryArray);
+		console.log("After running _filterThem, we get filteredBooks: ", filteredBooks) /*?*/
+
+		// If the search query is empty, show no books and show the greeting message
+		if (!queryString) {
+			this.setState({ showingBooks: [], message: this.messages.greeting });
+			// If the search query exists and filtered books is empty, show no books and show the failure message
+		} else if (queryString && filteredBooks.length === 0) {
+			this.setState({ showingBooks: [], message: this.messages.noMatch });
+			// If the search query exists and filtered books contains book(s), show the books
+		} else if (queryString && filteredBooks.length > 0) {
+			this.setState({ showingBooks: filteredBooks, message: this.messages.greeting });
 		}
 	}
 
 	render() {
-		
+
 		return (
 			<div className="search-books">
 				<div className="search-books-bar" >
 					<Link to="/" className="close-search">
 						Close
 					</Link>
-					<form className="search-books-input-wrapper">
+					<div className="search-books-input-wrapper">
 						<label htmlFor="book-search" className="visually-hidden">
 							Book Search
 						</label>
-						
-						<input
+
+						<DebounceInput
+							minLength={2}
+							debounceTimeout={750}
 							name="book-search"
 							onChange={this.handleQuery}
 							placeholder="Search by title or author"
 							type="text"
 						/>
-						
-					</form>
+
+					</div>
 				</div>
 				<div className="message">
 					{this.state.message}
 				</div>
-				<ul className="search-books-results books-grid">	
-					<Books 
-						cb={this.props.cb} 
-						key={generate()} 
-						shelfBooks={this.state.showingBooks} 
+				<ul className="search-books-results books-grid">
+					<Books
+						cb={this.props.cb}
+						key={generate()}
+						shelfBooks={this.state.showingBooks}
 					/>
 				</ul>
+
 			</div>
-		);	
+		);
 	}
 }
-		
