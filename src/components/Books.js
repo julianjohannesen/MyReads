@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { generate } from 'shortid';
 import ShelfChanger from './ShelfChanger';
-import noImage from '../icons/add.svg'
+import noImage from '../icons/no-image.gif'
 
 
 export default class Books extends Component {

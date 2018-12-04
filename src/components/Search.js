@@ -7,13 +7,9 @@ import { search } from "../BooksAPI";
 
 export default class Search extends Component {
 
-	//Previously, I created a search function that matched against only the approved list of search terms. I decided to create a better search experience for the user by searching for and returning all of the books in the library, and then generating a string containing title, subtitle, author, and category words, then matching against that. I know that in the real world, you'd have to implement a better search on the backend, and that you wouldn't want to be in the position of fetching and searching through a million books or whatever. 
+	//Previously, I created a search function that matched against only the approved list of search terms. I decided to create a better search experience for the user by searching for and returning all of the books in the library, and then generating a string containing title, subtitle, author, and category words, then matching against that. In the real world, I'd implement a better search on the backend, and would not want to be in the position of fetching and searching through thousands of books, but in our case it made sense.
 
-	// On the bright side, because I search for and return everything, I only need to make one API call and then filter the results for the search. It's a little bit slow, but adding debounce helped quite a bit.
-
-	// PROBLEM: I'm somtimes getting duplicate books in my search view.
-	// PROBLEM: Multi-word search for terms that are contained in the same search string aren't working. Eg if I enter "Stephen" and "Bio" I should get the biography of Stephen Hawking, but I do not.
-
+	// Because I search for and return everything, I make all of my API calls at page load and then filter the results for the search. Adding debounce helped speed things up a bit.
 
 	//A greeting or error message for visitors
 	messages = {
@@ -79,10 +75,8 @@ export default class Search extends Component {
 			${book.categories && book.categories[0] ? book.categories[0] : ""}  
 			${book.categories && book.categories[1] ? book.categories[1] : ""}`;
 		
-		// filterThem filters a collection of books using a search string comprised of various fields found in each book object and an array of query terms to be matched against that string. It calls itself once for each query term in the array, performing a new filter on the previously filtered results.
+		// filterThem filters a collection of books using a search string comprised of various fields found in each book object and an array of query terms to be matched against that string. It calls itself once for each query term in the array, performing a new filter on the previously filtered results, narrowing the search field on each call.
 		const _filterThem = (someBooks, aQueryArray) => {
-			console.log(`The query array is: ${aQueryArray}`);
-			console.log("The books are: ", someBooks)
 			if(aQueryArray.length === 0) {
 				console.log("The filtered books are: ", filteredBooks);
 				return filteredBooks;
@@ -90,7 +84,6 @@ export default class Search extends Component {
 				filteredBooks = someBooks.filter(book => {
 					return _searchString(book).match(new RegExp(aQueryArray[0], 'i'));
 				})
-				console.log("The filtered books are: ", filteredBooks);
 				aQueryArray.splice(0,1);
 				_filterThem(filteredBooks, aQueryArray);
 			}
@@ -98,15 +91,14 @@ export default class Search extends Component {
 
 		// For each query term in the query array, filter the books down to books whose search string contains the query term, performing the filter on smaller and smaller sets of filtered books
 		_filterThem(this.state.books, queryArray);
-		console.log("After running _filterThem, we get filteredBooks: ", filteredBooks) /*?*/
 
 		// If the search query is empty, show no books and show the greeting message
 		if (!queryString) {
 			this.setState({ showingBooks: [], message: this.messages.greeting });
-			// If the search query exists and filtered books is empty, show no books and show the failure message
+		// If the search query exists and filtered books is empty, show no books and show the failure message
 		} else if (queryString && filteredBooks.length === 0) {
 			this.setState({ showingBooks: [], message: this.messages.noMatch });
-			// If the search query exists and filtered books contains book(s), show the books
+		// If the search query exists and filtered books contains book(s), show the books
 		} else if (queryString && filteredBooks.length > 0) {
 			this.setState({ showingBooks: filteredBooks, message: this.messages.greeting });
 		}
